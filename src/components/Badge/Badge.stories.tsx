@@ -137,14 +137,13 @@ const meta = {
 export default meta;
 type Story = StoryObj<typeof meta>;
 
-
 export const Badge: Story = {
-    render: (args) => {
-        return (
-            <div css={styles}>
+  render: (args) => {
+    return (
+      <div css={styles}>
         <section>
           <i>Change args for configuring this one</i>
-          <SeBadge {...args} /> 
+          <SeBadge {...args} />
         </section>
         <section>
           <SeBadge count={7} />
@@ -162,8 +161,8 @@ export const Badge: Story = {
         </section>
       </div>
     );
-},
-args: {
+  },
+  args: {
     count: 7,
     dot: false,
     title: "Badge",
