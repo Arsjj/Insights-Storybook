@@ -1,45 +1,74 @@
 import type { Meta, StoryObj } from "@storybook/react";
-import SePanel from "./index";
+import SiPanel from "./index";
 import SeCollapse from "../index";
+import SiCollapse from "../index";
 
-const meta: Meta <typeof SePanel> = {
-    title: "CollapsePanel",
-    component: SePanel,
-    decorators: [
-        (Story) => (
-            <SeCollapse>
-                {/* 👇 Decorators in Storybook also accept a function. Replace <Story/> with Story() to enable it  */}
-                <Story />
-            </SeCollapse>
-        ),
-    ],
-
-}
+const meta: Meta<typeof SiPanel> = {
+  title: "Example/Collapse/CollapsePanel",
+  component: SiPanel,
+  tags: ["autodocs"],
+  argTypes: {
+    collapsible: {
+      description:
+        "Specify whether the panel be collapsible or the trigger area of collapsible",
+      table: {
+        type: { summary: "header | icon | disabled" },
+      },
+    },
+    extra: {
+      description: "The extra element in the corner",
+      table: {
+        type: { summary: "ReactNode	" },
+      },
+    },
+    forceRender: {
+      description:
+        "Forced render of content on panel, instead of lazy rendering after clicking on header",
+      table: {
+        type: { summary: "boolean" },
+      },
+      defaultValue: {
+        summary: "false",
+      },
+    },
+    header: {
+      description: "Title of the panel",
+      table: {
+        type: { summary: "ReactNode" },
+      },
+    },
+    key: {
+      description: "Unique key identifying the panel from among its siblings",
+      table: {
+        type: { summary: "string | number" },
+      },
+    },
+    showArrow: {
+      description:
+        "If false, panel will not show arrow icon. If false, collapsible can't be set as icon",
+      table: {
+        type: { summary: "boolean" },
+      },
+      defaultValue: {
+        summary: "true",
+      },
+    },
+  },
+};
 
 export default meta;
 type Story = StoryObj<typeof meta>;
 
-export const CollapsePanel: Story = {
-    args: {
-        header: "CollapsePanel",
-        showArrow: true,
-        children: <p>Collapse description</p>
-    }
+export const Panels: Story = {
+  render: (args) => {
+    return <div>
+        <SiCollapse>
+            <SiPanel {...args}>This is panel 1</SiPanel>
+        </SiCollapse>
+    </div>;
+  },
+  args: {
+    header: "CollapsePanel",
+    showArrow: true,
+  },
 };
-
-// export const CollapsePanel: Story = {
-//     render: () => <SeCollapse><SePanel key="sd" header="Pam]nel Mid">text</SePanel></SeCollapse>,
-//     args: {
-//         header: "CollapsePanel",
-//         showArrow: true,
-//         key: "collapse",
-//         children: <p>Collapse description</p>
-//
-//     }
-// };
-
-
-
-
-
-

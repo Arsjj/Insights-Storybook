@@ -3,10 +3,10 @@ import {Collapse, CollapsePanelProps } from 'antd';
 
 const { Panel } = Collapse;
 
-const SePanel:FC<CollapsePanelProps> = ({...rest }) => {
+const SiPanel:FC<CollapsePanelProps> = ({...rest }) => {
     return (
         <Panel {...rest}/>
     );
 };
 
-export default SePanel;
+export default SiPanel;

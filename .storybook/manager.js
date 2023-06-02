@@ -8,11 +8,11 @@ import { themes } from '@storybook/theming';
 
 const theme = {
   // base: 'light',
-  brandTitle: 'My custom Storybook',
+  brandTitle: 'Sentium Insights',
   brandUrl: 'https://example.com',
   brandImage: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQbGPOTyfTP89FoIm8b_qs6bdeTgrJ7rgw1f21gRIOxVg&s',
   brandTarget: '_self',
-  // appBg: '#d6e4ff',
+  appBg: 'rgba(25,25,69,1)',
   // appContentBg: 'red',
   // appBorderColor: "blue",
   appBorderRadius: 10,

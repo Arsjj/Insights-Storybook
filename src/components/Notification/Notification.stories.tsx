@@ -6,13 +6,13 @@ import { ArgsProps, IconType } from "antd/es/notification/interface";
 import { FC } from "react";
 import { CloseOutlined } from "@ant-design/icons";
 
-const Notification = ({...mer}: ArgsProps, type: IconType) => {
+const Notification = ({...args}: ArgsProps, type:IconType) => {
   const { openNotification, context } = useSiNotification();
 
   return (
     <>
       {context}
-      <Button onClick={() => openNotification({...mer}, "success")}>Click</Button>
+      <Button onClick={() => openNotification({...args}, "success")}>Click</Button>
     </>
   );
 };
@@ -20,45 +20,29 @@ const Notification = ({...mer}: ArgsProps, type: IconType) => {
 const meta = {
   title: "Example/Notification",
   component: Notification,
-  // argTypes: {
-  //     collapsible: {
-  //         control: {
-  //             type: "select",
-  //         },
-  //         options: ["header", "icon", "disabled"]
-  //     },
-  //     expandIconPosition: {
-  //         control: {
-  //             type: "select",
-  //         },
-  //         options: ["start", "end"]
-  //     },
-  //     size: {
-  //         control: {
-  //             type: "radio",
-  //         },
-  //         options: ["small", "middle", "large"]
-  //     }
-  // }
+  tags: ['autodocs'],
+  argTypes: {
+      
+  }
 } satisfies Meta<typeof Notification>;
 
 export default meta;
 type Story = StoryObj<typeof meta>;
 
 export const NotificationExample: Story = {
+  render: (args, type) => { return (
+    <div>
+      <Notification {...args}/>
+    </div>
+  )},
   args: {
-    // {
-    //   message: "asdad"
-    // },
+    
     
     
     
     message: "Example",
-    // description: "Example description",
-    // btn: <Button children="Go"/>,
-    // closeIcon: <CloseOutlined/>,
-    // duration: 5000,
-    // placement: "topRight"
+    placement: "bottom"
+    
   },
    
 };

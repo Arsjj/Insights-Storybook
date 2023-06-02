@@ -1,6 +1,6 @@
 import {FC} from "react";
 import {Collapse, CollapseProps} from 'antd';
-import SePanel from "./Panel/index";
+import SiPanel from "./Panel/index";
 import {css} from "@emotion/react";
 
 
@@ -21,23 +21,15 @@ const text = `
   it can be found as a welcome guest in many households across the world.
 `;
 
-const SeCollapse:FC<CollapseProps> = ({...rest}) => {
+const SiCollapse:FC<CollapseProps> = ({...rest}) => {
     return (
         <Collapse
             css={styles}
             {...rest}
         >
-            <SePanel header="This is panel header 1" key="1" >
-                <p>{text}</p>
-            </SePanel>
-            <SePanel header="This is panel header 2" key="2">
-                <p>{text}</p>
-            </SePanel>
-            <SePanel header="This is panel header 3" key="3">
-                <p>{text}</p>
-            </SePanel>
+            
         </Collapse>
     );
 };
 
-export default SeCollapse;
+export default SiCollapse;

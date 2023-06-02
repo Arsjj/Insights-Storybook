@@ -8,10 +8,22 @@ import Plugin from './assets/plugin.svg';
 import Repo from './assets/repo.svg';
 import StackAlt from './assets/stackalt.svg';
 
+
 <Meta title="Example/Introduction" />
 
 <style>
   {`
+    .main {
+      animation-name: na;
+      animation-duration: 1s;
+    }
+
+    @keyframes na {
+      0% {opacity: 0.1}
+      100% {opacity: 1.0}
+
+    }
+
     .subheading {
       --mediumdark: '#999999';
       font-weight: 700;
@@ -22,6 +34,10 @@ import StackAlt from './assets/stackalt.svg';
       text-transform: uppercase;
       margin-bottom: 12px;
       margin-top: 40px;
+    }
+
+    .h5{
+      color: gray;
     }
 
     .link-list {
@@ -116,71 +132,32 @@ import StackAlt from './assets/stackalt.svg';
   `}
 </style>
 
+<div className="main">
+
 # Welcome to Sentium Insights
 
-Storybook helps you build UI components in isolation from your app's business logic, data, and context.
-That makes it easy to develop hard-to-reach states. Save these UI states as **stories** to revisit during development, testing, or QA.
+Business intelligence combines business analytics, data mining, data visualization, 
+data tools and infrastructure, and best practices to help organizations 
+make more data-driven decisions. In practice, you know you’ve got modern 
+business intelligence when you have a comprehensive view of your organization’s 
+data and use that data to drive change, eliminate inefficiencies, and quickly 
+adapt to market or supply changes. Modern BI solutions prioritize flexible 
+self-service analysis, governed data on trusted platforms, empowered business 
+users, and speed to insight. 
 
-Browse example components now by navigating to them in the sidebar.
-View their code in the `stories` directory to learn how they work.
-We recommend building UIs with a [**component-driven**](https://componentdriven.org) process starting with atomic components and ending with pages.
 
-<div className="subheading">Configure</div>
+<h4 className="h5">Sentium Insights components llybrary help developers building
+ beautiful products more flexible and working with happiness</h4>
 
-<div className="link-list">
-  <a
-    className="link-item"
-    href="https://storybook.js.org/docs/react/addons/addon-types"
-    target="_blank"
-  >
-    <img src={Plugin} alt="plugin" />
-    <span>
-      <strong>Presets for popular tools</strong>
-      Easy setup for TypeScript, SCSS and more.
-    </span>
-  </a>
-  <a
-    className="link-item"
-    href="https://storybook.js.org/docs/react/configure/webpack"
-    target="_blank"
-  >
-    <img src={StackAlt} alt="Build" />
-    <span>
-      <strong>Build configuration</strong>
-      How to customize webpack and Babel
-    </span>
-  </a>
-  <a
-    className="link-item"
-    href="https://storybook.js.org/docs/react/configure/styling-and-css"
-    target="_blank"
-  >
-    <img src={Colors} alt="colors" />
-    <span>
-      <strong>Styling</strong>
-      How to load and configure CSS libraries
-    </span>
-  </a>
-  <a
-    className="link-item"
-    href="https://storybook.js.org/docs/react/get-started/setup#configure-storybook-for-your-stack"
-    target="_blank"
-  >
-    <img src={Flow} alt="flow" />
-    <span>
-      <strong>Data</strong>
-      Providers and mocking for data libraries
-    </span>
-  </a>
-</div>
 
-<div className="subheading">Learn</div>
+
+<div className="subheading">More</div>
 
 <div className="link-list">
   <a className="link-item" href="https://storybook.js.org/docs" target="_blank">
     <img src={Repo} alt="repo" />
     <span>
-      <strong>Storybook documentation</strong>
+      <strong>SI lybrary documentation </strong>
       Configure, customize, and extend
     </span>
   </a>
@@ -192,9 +169,9 @@ We recommend building UIs with a [**component-driven**](https://componentdriven.
     </span>
   </a>
   <a className="link-item" href="https://github.com/storybookjs/storybook" target="_blank">
-    <img src={Code} alt="code" />
+    <img src={Plugin} alt="code" />
     <span>
-      <strong>GitHub project</strong>
+      <strong>Sentium Insights webpage</strong>
       View the source and add issues
     </span>
   </a>
@@ -210,4 +187,5 @@ We recommend building UIs with a [**component-driven**](https://componentdriven.
 <div className="tip-wrapper">
   <span className="tip">Tip</span>Edit the Markdown in{' '}
   <code>stories/Introduction.stories.mdx</code>
+</div>
 </div>
