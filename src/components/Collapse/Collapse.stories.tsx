@@ -3,7 +3,7 @@ import SiCollapse from "./index";
 import SiPanel from "./Panel";
 
 const meta = {
-  title: "Example/Collapse",
+  title: "Si/SiCollapse",
   component: SiCollapse,
   tags: ["autodocs"],
   argTypes: {

@@ -1,5 +1,5 @@
 import type { Meta, StoryObj } from "@storybook/react";
-import SeBadge from "./index";
+import SiBadge from "./index";
 import { Avatar } from "antd";
 import { css } from "@emotion/react";
 
@@ -21,8 +21,8 @@ const styles = css`
 `;
 
 const meta = {
-  title: "Example/Badge",
-  component: SeBadge,
+  title: "SI/SiBadge",
+  component: SiBadge,
   tags: ["autodocs"],
   argTypes: {
     color: {
@@ -132,7 +132,7 @@ const meta = {
       options: ["success", "warning", "danger", "default", "processing"],
     },
   },
-} satisfies Meta<typeof SeBadge>;
+} satisfies Meta<typeof SiBadge>;
 
 export default meta;
 type Story = StoryObj<typeof meta>;
@@ -143,21 +143,21 @@ export const Badge: Story = {
       <div css={styles}>
         <section>
           <i>Change args for configuring this one</i>
-          <SeBadge {...args} />
+          <SiBadge {...args} />
         </section>
         <section>
-          <SeBadge count={7} />
-          <SeBadge statusType="warning" count={10} />
-          <SeBadge statusType="danger" count={100} />
-          <SeBadge statusType="processing" count={1} />
-          <SeBadge count={100} statusType="danger">
+          <SiBadge count={7} />
+          <SiBadge statusType="warning" count={10} />
+          <SiBadge statusType="danger" count={100} />
+          <SiBadge statusType="processing" count={1} />
+          <SiBadge count={100} statusType="danger">
             <Avatar shape="square" size="large" />
-          </SeBadge>
-          <SeBadge count={7} offset={[-30, -2]} color="blue">
+          </SiBadge>
+          <SiBadge count={7} offset={[-30, -2]} color="blue">
             <div>
               <i>Badge with offset</i>
             </div>
-          </SeBadge>
+          </SiBadge>
         </section>
       </div>
     );

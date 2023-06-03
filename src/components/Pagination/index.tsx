@@ -7,7 +7,7 @@ import { Pagination } from "antd";
 const { darkAlgorithm, defaultAlgorithm } = theme;
 
 
-const SePagination: FC<PaginationProps> = ({...rest}) => (
+const SiPagination: FC<PaginationProps> = ({...rest}) => (
   <ConfigProvider
     theme={{
       algorithm: defaultAlgorithm,
@@ -60,4 +60,4 @@ const SePagination: FC<PaginationProps> = ({...rest}) => (
   </ConfigProvider>
 );
 
-export default SePagination;
+export default SiPagination;

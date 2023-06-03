@@ -27,8 +27,8 @@ const styles = css`
   }
 `;
 
-const SeAlert: FC<AlertProps> = ({ ...rest }) => (
+const SiAlert: FC<AlertProps> = ({ ...rest }) => (
   <Alert css={styles} {...rest} />
 );
 
-export default SeAlert;
+export default SiAlert;

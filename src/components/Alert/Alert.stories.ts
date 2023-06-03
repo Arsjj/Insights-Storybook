@@ -1,10 +1,10 @@
 import type { Meta, StoryObj } from "@storybook/react";
 
-import SeAlert from "./index";
+import SiAlert from "./index";
 
 const meta = {
-  title: "Example/SeAlert",
-  component: SeAlert,
+  title: "SI/SiAlert",
+  component: SiAlert,
   tags: ["autodocs"],
   argTypes: {
     action: {
@@ -113,7 +113,7 @@ const meta = {
       options: ["success", "error", "info", "warning"],
     },
   },
-} satisfies Meta<typeof SeAlert>;
+} satisfies Meta<typeof SiAlert>;
 
 export default meta;
 type Story = StoryObj<typeof meta>;

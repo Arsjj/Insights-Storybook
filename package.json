@@ -22,9 +22,11 @@
     "sass": "^1.62.0"
   },
   "devDependencies": {
+    "@storybook/addon-a11y": "^7.0.18",
     "@storybook/addon-essentials": "^7.0.3",
     "@storybook/addon-interactions": "^7.0.3",
     "@storybook/addon-links": "^7.0.3",
+    "@storybook/addon-options": "^5.3.21",
     "@storybook/blocks": "^7.0.3",
     "@storybook/manager-api": "^7.0.18",
     "@storybook/react": "^7.0.3",

@@ -4,7 +4,7 @@ import {Props} from "./index.d";
 
 
 
-const SeBadge: FC<Props> = ({statusType = "default",  ...rest}) => {
+const SiBadge: FC<Props> = ({statusType = "default",  ...rest}) => {
     const colors:any = {
         success : "#219653",
         warning: "#F2994A",
@@ -17,4 +17,4 @@ const SeBadge: FC<Props> = ({statusType = "default",  ...rest}) => {
         <Badge color={colors[statusType]} {...rest}/>
     )};
 
-export default SeBadge;
+export default SiBadge;

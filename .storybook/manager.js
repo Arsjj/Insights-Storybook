@@ -7,12 +7,12 @@ import { themes } from '@storybook/theming';
 // "https://dev-website-strapi-images.s3.fr-par.scw.cloud/poster_success_stories_c45e4b4ef6.png"
 
 const theme = {
-  // base: 'light',
+  base: 'dark',
   brandTitle: 'Sentium Insights',
   brandUrl: 'https://example.com',
-  brandImage: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQbGPOTyfTP89FoIm8b_qs6bdeTgrJ7rgw1f21gRIOxVg&s',
-  brandTarget: '_self',
-  appBg: 'rgba(25,25,69,1)',
+  brandImage: 'https://cdn.staff.am/staff.am/upload/f/d/7/1/fd7164a2.png',
+  // brandTarget: '_self',
+  // appBg: 'linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(154,150,237,0.46559873949579833) 5%, rgba(4,2,55,1) 8%, rgba(9,9,121,1) 35%, rgba(0,212,255,1) 100%);',
   // appContentBg: 'red',
   // appBorderColor: "blue",
   appBorderRadius: 10,
@@ -22,3 +22,6 @@ const theme = {
 addons.setConfig({
   theme: theme,
 });
+
+
+ 
