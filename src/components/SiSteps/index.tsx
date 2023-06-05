@@ -1,5 +1,5 @@
 import { FC } from "react";
-import { Steps, StepsProps } from "antd";
+import { Steps, StepsProps, StepProps } from "antd";
 import { css } from "@emotion/react";
 
 
