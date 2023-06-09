@@ -9,7 +9,7 @@ import SeEmpty from "./components/Empty";
 import SeTimeline from "./components/Timeline";
 import Section from "./components/Section";
 import SeTag from "./components/Tag";
-import { Button, ConfigProvider } from "antd";
+import { Button, ConfigProvider, Select } from "antd";
 import {
   CheckCircleTwoTone,
   ClockCircleOutlined,
@@ -24,6 +24,8 @@ import SeCard from "./components/Card";
 import SiStep from "./components/SiSteps";
 import "./App.scss";
 import SiDatePicker from "./components/SiDatePicker";
+import SiMenu from "./components/SiMenu/indexe";
+import { css } from "@emotion/css";
 
 const items = [
   {
@@ -56,7 +58,7 @@ const stepItems = [
   },
   {
     title: "In Progress",
-    // description,
+    // description: "dsfsdfsdf"
   },
   {
     title: "Waiting",
@@ -116,86 +118,30 @@ function App() {
           lineHeightHeading3: 2.25,
           lineHeightHeading4: 1.75,
           lineWidthFocus: 0,
-          borderRadius: 16,
-          borderRadiusLG: 24,
-          borderRadiusSM: 16,
           paddingContentHorizontal: 16,
         },
       }}
     >
       <div className="App">
-        <SePagination total={50} defaultCurrent={3} showQuickJumper={true} />
-        <SeCollapse />
-        <SeBadge statusType="success" count={7} />
-        <SeBadge count={128} />
-        <SeCalendar />
-        <SeAvatar size={100} shape="square">
-          Mari
-        </SeAvatar>
-        <SeEmpty />
-        <SeTimeline mode="alternate" items={items} />
-        <Section onClick={() => console.log("log")} />
-        <SeTag
-          icon={<SyncOutlined spin />}
-          color="processing"
-          checkable
-          onChange={handleSelect}
-          checked={selected}
-        >
-          processing
-        </SeTag>
-        <SeTag
-          add
-          getTags={(tags) => console.log(tags)}
-          getNewAdded={(value) => {
-            console.log(value, "Value");
-          }}
-          children="New Tag 1"
-          icon="double"
-        ></SeTag>
-        <SeTag
-          icon={<ExclamationCircleOutlined />}
-          closable
-          color="warning"
-          getTags={() => {}}
-        >
-          warning
-        </SeTag>
-        <SeTag icon={<ClockCircleOutlined />} iconPosition="double" closable>
-          waiting
-        </SeTag>
-        <SeTag icon={<MinusCircleOutlined />} color="blue">
-          stop
-        </SeTag>
-        <SeAlert message="Informational Notes" type="info" showIcon />
-        <SeAlert message="Warning" type="warning" showIcon closable />
-        <SeAlert message="Error" type="error" showIcon />
-        <SeAlert
-          message="Success Tips"
-          description="Detailed description and advice about successful copywriting."
-          type="success"
-          showIcon
+        <SiMenu />
+        <Select
+          popupClassName={css`
+            background-color: blue;
+          `}
+          options={[
+            {
+              value: "1",
+              label: "1",
+            },
+          ]}
         />
-        <SeCard />
-        <SiStep current={1} status="process" items={stepItems} />
-        {context}
-        <Button
-          onClick={() =>
-            openNotification(
-              {
-                message: "Copy message",
-                description: "kakoy ty description",
-                placement: "bottomRight",
-                icon: <UserOutlined />,
-              },
-              "success"
-            )
-          }
-        >
-          Notif Button
-        </Button>
 
-        <SiDatePicker />
+        <SiStep
+          items={stepItems}
+          type="inline"
+          direction="horizontal"
+          current={2}
+        />
       </div>
     </ConfigProvider>
   );

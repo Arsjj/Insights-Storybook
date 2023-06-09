@@ -4,30 +4,61 @@ import { DatePicker, Space } from "antd";
 // import { css } from "@emotion/react";
 import { css } from "@emotion/css";
 import "./index.css";
+import { useState } from "react";
 
-const onChange: DatePickerProps["onChange"] = (date, dateString) => {
-  console.log(date, dateString);
-};
 
 const styles = css`
   border-radius: 8px;
-`;
+  `;
 
 const SiDatePicker = () => {
+    const [filled, setFilled] = useState(false)
+    
+    
+    
+    const onChange: DatePickerProps["onChange"] = (date, dateString) => {
+      console.log(date, dateString);
+      if(date){
+        setFilled(true)    
+      } else {
+        setFilled(false)
+      }
+      console.log(filled, 45)
+    };
+    
   return (
-    <Space>
+    <div className={
+      css`
+    .ant-picker-focused{
+        border-color: #2751F4  //blue6
+    }`}>
+
       <DatePicker
-        className={css`
+        onBlur={() => console.log('onBlur')}
+        className={css`          
           border-radius: 8px;
+          box-shadow: none;
+          /* border-color: red; */
+          &:hover {
+            border-color: #83848A; //gray7
+          };
+          &::after {
+            border-color: red; //primary7
+          };
+          
+          .ant-picker-focused {
+            border-color: red; 
+            border-radius: 25px;
+          }
+          
         `}
+        onPanelChange={() => console.log(123)}
         onChange={onChange}
-        // style={{ width: "300px" }}
         popupClassName={css`
           .ant-picker-panel-container {
             border-radius: 8px;
 
             .ant-picker-date-panel {
-              /* display: flex; */
               justify-content: center;
               .ant-picker-header {
                 .ant-picker-header-super-prev-btn {
@@ -76,7 +107,7 @@ const SiDatePicker = () => {
         `}
         // popupClassName="blue"
       />
-    </Space>
+    </div>
   );
 };
 
