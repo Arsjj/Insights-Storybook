@@ -26,6 +26,7 @@ import "./App.scss";
 import SiDatePicker from "./components/SiDatePicker";
 import SiMenu from "./components/SiMenu/indexe";
 import { css } from "@emotion/css";
+import SiLeftSidbar from "./components/SiMenu/SiLeftSidebar";
 
 const items = [
   {
@@ -123,25 +124,14 @@ function App() {
       }}
     >
       <div className="App">
-        <SiMenu />
-        <Select
-          popupClassName={css`
-            background-color: blue;
-          `}
-          options={[
-            {
-              value: "1",
-              label: "1",
-            },
-          ]}
-        />
+        <SiLeftSidbar />
 
-        <SiStep
+        {/* <SiStep
           items={stepItems}
-          type="inline"
+          // type="inline"
           direction="horizontal"
           current={2}
-        />
+        /> */}
       </div>
     </ConfigProvider>
   );

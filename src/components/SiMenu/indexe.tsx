@@ -1,17 +1,20 @@
-import React, { useState } from "react";
-import {
-  AppstoreOutlined,
-  MailOutlined,
-  SettingOutlined,
-} from "@ant-design/icons";
+import { FC } from "react";
 import type { MenuProps } from "antd";
 import { Menu } from "antd";
+
 import { css } from "@emotion/react";
-import Plus from "../../svg/Plus";
+
+type SiMenuProps = MenuProps & {
+  inllineModeWithBadge?: boolean | undefined;
+};
 
 const styles = css`
+  .ant-menu-inline .ant-menu-item {
+  }
+
   .ant-menu-item {
     border-radius: 8px 0px 0px 8px;
+    
     &:hover:not(.ant-menu-item-selected):not(.ant-menu-submenu-selected) {
       background-color: #f0f5ff; //blue1
     }
@@ -19,7 +22,7 @@ const styles = css`
 
   .ant-menu-submenu-title {
     &:hover:not(.ant-menu-item-selected):not(.ant-menu-submenu-selected) {
-      background-color: #f0f5ff; //blue1
+      background-color:  #F0F5FF; //blue1
     }
     border-radius: 8px 0px 0px 8px;
   }
@@ -39,69 +42,35 @@ const styles = css`
   } */
 
   .ant-menu-item-selected {
-    background-color: #f0f5ff;
+    background-color:  #F0F5FF;
     border-radius: 8px 0px 0px 8px;
 
     &::after {
-      width: 10px;
+      width: 7px;
       height: 100%;
+      margin: 0;
       background: #2751f4;
       border-radius: 8px 0px 0px 8px;
       content: "";
     }
+
+    svg {
+      path {
+        stroke: rgba(39, 81, 244, 1); //blue 6
+      }
+    }
+  }
+
+  svg {
+    margin-right: 12px;
   }
 `;
 
-type MenuItem = Required<MenuProps>["items"][number];
-
-function getItem(
-  label: React.ReactNode,
-  key: React.Key,
-  icon?: React.ReactNode,
-  children?: MenuItem[],
-  type?: "group"
-): MenuItem {
-  return {
-    key,
-    icon,
-    children,
-    label,
-    type,
-  } as MenuItem;
-}
-
-const items: MenuItem[] = [
-  getItem("Dashboard", "sub1", <MailOutlined />),
-  getItem("Team", "sub2", <AppstoreOutlined />),
-  getItem("Settings", "sub3", <Plus color="" size={18}/>),
-  getItem("", "sub4", <AppstoreOutlined />),
-  getItem("Navigation Three", "sub5", <SettingOutlined />
-  ),
-];
-
-// submenu keys of first level
-const rootSubmenuKeys = ["sub1", "sub2", "sub3", "sub4", "sub5"];
-
-const SiMenu: React.FC = () => {
-  const [openKeys, setOpenKeys] = useState(["sub1"]);
-
-  const onOpenChange: MenuProps["onOpenChange"] = (keys) => {
-    const latestOpenKey = keys.find((key) => openKeys.indexOf(key) === -1);
-    if (rootSubmenuKeys.indexOf(latestOpenKey!) === -1) {
-      setOpenKeys(keys);
-    } else {
-      setOpenKeys(latestOpenKey ? [latestOpenKey] : []);
-    }
-  };
+const SiMenu: FC<SiMenuProps> = ({ inllineModeWithBadge, mode, ...rest }) => {
+  const inllineModeWithBadgeStyles = inllineModeWithBadge && mode === "inline";
 
   return (
-    <Menu
-      css={styles}
-      mode="inline"
-      openKeys={openKeys}
-      items={items}
-      onOpenChange={onOpenChange}
-    />
+    <Menu css={inllineModeWithBadgeStyles && styles} {...rest} mode={mode} />
   );
 };
 

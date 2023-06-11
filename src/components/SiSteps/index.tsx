@@ -154,7 +154,7 @@ const styles1 = css`
 
 const SiStep: FC<StepsProps> = ({ ...rest }) => {
   return (<ConfigProvider>
-    <Steps css={styles1} {...rest} percent={60}/>
+    <Steps css={styles} {...rest} percent={60}/>
   </ConfigProvider>
     ) 
 };

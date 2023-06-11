@@ -1,7 +1,12 @@
-import { FC, FunctionComponent, PropsWithChildren } from 'react';
-import { css } from '@emotion/react';
-import Plus from './Plus';
-
+import { FC, FunctionComponent, PropsWithChildren } from "react";
+import { css } from "@emotion/react";
+import Plus from "./Plus";
+import StarTwoTone from "./Star";
+import Team from "./Team/index.";
+import Cube from "./Cube";
+import Setting from "./Setting";
+import MessageQuestion from "./MessageQuestion";
+import Logo from "./Sentium";
 // type RFC<P = {}> = FunctionComponent<PropsWithChildren<P>>;
 
 interface Props {
@@ -20,7 +25,7 @@ export type Icons = {
 
 const Icon: FC<Props> = ({
   name,
-  color = 'currentColor',
+  color = "currentColor",
   size = 24,
   className,
 }) => {
@@ -33,6 +38,12 @@ const Icon: FC<Props> = ({
 
 const icons = {
   plus: (color: string, size: number) => <Plus color={color} size={size} />,
+  StarTwoTone: () => <StarTwoTone color="black" size={20} />,
+  Team: () => <Team color="black" size={20} />,
+  Cube: () => <Cube color="black" size={20} />,
+  Setting: () => <Setting color="black" size={20} />,
+  MessageQuestion: () => <MessageQuestion color="black" size={20} />,
+  SentiumLogo: () => <Logo />,
 };
 
 const iconStyle = css`
