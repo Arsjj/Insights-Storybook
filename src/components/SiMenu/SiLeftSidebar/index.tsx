@@ -33,16 +33,17 @@ const items: MenuItem[] = [
 const rootSubmenuKeys = ["sub1", "sub2", "sub3", "sub4"];
 
 const styles = css`
+  display: flex;
+  flex-direction: column;
   position: absolute;
   width: 280px;
-  height: 100vh;
-  background-color: #eff1f5;  //grey2
-  padding: 20px 0 20px 0px;
-  color: #4A4A4E !important; //grey8
-
+  height: 100%;
+  background-color: #eff1f5; //grey2
+  padding: 16px 0 20px 10px;
+  color: #4a4a4e !important; //grey8
 
   .logo {
-    height: 110px;
+    height: 125px;
     width: fit-content;
 
     svg {
@@ -57,26 +58,25 @@ const styles = css`
     background-color: #eff1f5;
     /* color: #4A4A4E; //grey8 */
     font-size: 18px;
-    margin-block-start: 0em;
-    margin-block-end: 0em;
+    margin-bottom: 70px;
 
     li {
-      margin-left: 7px;
-      height: 100%;
+      margin-left: 8px;
+      height: fit-content;
       padding-top: 4px;
       padding-bottom: 5px;
-      margin-bottom: 10px !important;
+      /* margin-bottom: 0px !important; */
       margin-block: 0px;
       box-sizing: border-box;
     }
   }
 
-  .messageContainer{
+  .messageContainer {
     display: flex;
-    gap: 20px;
     position: absolute;
-    left: 35px;
+    left: 46px;
     bottom: 30px;
+    gap: 20px;
   }
 `;
 
