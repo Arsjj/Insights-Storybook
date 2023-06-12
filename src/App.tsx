@@ -26,7 +26,7 @@ import "./App.scss";
 import SiDatePicker from "./components/SiDatePicker";
 import SiMenu from "./components/SiMenu/indexe";
 import { css } from "@emotion/css";
-import SiLeftSidbar from "./components/SiMenu/SiLeftSidebar";
+import SiLeftSidbar from "./Website Components/SiLeftSidebar";
 
 const items = [
   {

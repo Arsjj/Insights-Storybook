@@ -38,12 +38,12 @@ const Icon: FC<Props> = ({
 
 const icons = {
   plus: (color: string, size: number) => <Plus color={color} size={size} />,
-  StarTwoTone: () => <StarTwoTone color="black" size={20} />,
-  Team: () => <Team color="black" size={20} />,
-  Cube: () => <Cube color="black" size={20} />,
-  Setting: () => <Setting color="black" size={20} />,
-  MessageQuestion: () => <MessageQuestion color="black" size={20} />,
-  SentiumLogo: () => <Logo />,
+  StarTwoTone: (color: string, size: number) => <StarTwoTone color={color} size={size} />,
+  Team: (color: string, size: number) => <Team color={color} size={size} />,
+  Cube: (color: string, size: number) => <Cube color={color} size={size} />,
+  Setting: (color: string, size: number) => <Setting color={color} size={size} />,
+  MessageQuestion: (color: string, size: number) => <MessageQuestion color={color} size={size} />,
+  SentiumLogo: () => <Logo/>,
 };
 
 const iconStyle = css`

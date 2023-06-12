@@ -1,6 +1,6 @@
 import { useState } from "react";
-import SiMenu from "../../SiMenu/indexe";
-import Icon from "../../../svg";
+import SiMenu from "../../components/SiMenu/indexe";
+import Icon from "../../svg";
 import { MenuProps } from "antd";
 import { css } from "@emotion/react";
 
@@ -57,7 +57,7 @@ const styles = css`
   .ant-menu {
     background-color: #eff1f5;
     /* color: #4A4A4E; //grey8 */
-    font-size: 18px;
+    font-size: 16px;
     margin-bottom: 70px;
 
     li {
@@ -77,6 +77,7 @@ const styles = css`
     left: 46px;
     bottom: 30px;
     gap: 20px;
+    cursor: pointer;
   }
 `;
 
