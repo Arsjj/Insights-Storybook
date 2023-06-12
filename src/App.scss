@@ -10,6 +10,11 @@
 
  .App {
   display: grid;
+  justify-content: center;
+  position: absolute;
+  width: 70%;
+  left: 300px;
+  top: 50px;
   // gap: 2rem;
   //  background-color: violet;
  }

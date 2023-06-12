@@ -2,7 +2,6 @@ import { FC } from "react";
 import { Steps, StepsProps, StepProps, ConfigProvider } from "antd";
 import { css } from "@emotion/react";
 
-
 const styles = css`
   .ant-steps-item.ant-steps-item-finish {
     .ant-steps-item-icon {
@@ -62,16 +61,22 @@ const styles = css`
 `;
 
 const styles1 = css`
-.ant-steps-item.ant-steps-item-finish {
-    .ant-steps-item-tail{
-      &::after {background-color: transparent};
+  .ant-steps-item {
+    /* align-content: center; */
+  }
+
+  .ant-steps-item.ant-steps-item-finish {
+    .ant-steps-item-tail {
+      &::after {
+        background-color: transparent;
+      }
     }
     .ant-steps-item-icon {
       border-color: #219653;
       background-color: transparent;
       > .ant-steps-icon {
         .ant-steps-icon-dot {
-          background-color: #00DF57; //green 8
+          background-color: #00df57; //green 8
           width: 10px;
           border: 0;
         }
@@ -79,6 +84,9 @@ const styles1 = css`
       svg {
         color: rgba(33, 150, 83, 1);
       }
+    }
+    .ant-steps-item-content {
+      display: none;
     }
   }
 
@@ -91,20 +99,34 @@ const styles1 = css`
     }
   }
 
-  
-    
-    .ant-steps-item.ant-steps-item-process {
-      .ant-steps-item-tail{
-        &::after {background-color: transparent};
+  .ant-steps-item.ant-steps-item-process {
+    .ant-steps-item-container {
+      display: flex;
+      /* justify-content: space-between; */
+      align-items: center;
+      padding: 0;
+
+      .ant-steps-item-tail {
+        display: none;
+        /* &::after {background-color: transparent}; */
       }
+      .ant-steps-item-icon{
+        margin: 0;
+      }
+      .ant-steps-item-content {
+        margin: 0;
+      }
+    }
     .ant-steps-item-icon {
+      background-color: #f0f5ff; //blu1
+        width: 25px;
       background-color: transparent;
       border-color: #2751f4;
       > .ant-steps-icon {
         color: #2751f4;
       }
       .ant-steps-icon-dot {
-        background-color: #F0F5FF; //blu1
+        background-color: #f0f5ff; //blu1
         width: 25px;
       }
       svg {
@@ -113,12 +135,13 @@ const styles1 = css`
     }
   }
 
-  .ant-steps-item-container {
+  /* .ant-steps-item-container {
     .ant-steps-item-tail{
       &::after {background-color: blue};
     }
     display: flex;
-  }
+    width: fit-content;
+  } */
 
   .ant-steps-item.ant-steps-item-wait {
     .ant-steps-item-icon {
@@ -127,36 +150,56 @@ const styles1 = css`
       > .ant-steps-icon {
         .ant-steps-icon-dot {
           width: 10px;
-          background-color: #CCDDFF; //blu2
+          background-color: #ccddff; //blu2
           border: 0;
         }
         svg {
         }
       }
     }
+    .ant-steps-item-tail {
+      &::after {
+        background-color: transparent;
+      }
+    }
+    .ant-steps-item-content {
+      display: none;
+    }
   }
 
-  .ant-steps.ant-steps-inline{
+  .ant-steps.ant-steps-inline {
     background-color: #2751f4;
-    .ant-steps-item{
-      .ant-steps-icon-container{
-
-        
-        .ant-steps-item-tail{
+    .ant-steps-item {
+      .ant-steps-icon-container {
+        .ant-steps-item-tail {
           background-color: red;
         }
       }
     }
   }
-  
-`
+`;
 
+const styles2 = css`
+  .ant-steps-item {
+    /* background-color: aqua; */
+
+    .ant-steps-item-icon {
+      background-color: green;
+      width: 50px;
+      height: 50px;
+      svg {
+        display: none;
+      }
+    }
+  }
+`;
 
 const SiStep: FC<StepsProps> = ({ ...rest }) => {
-  return (<ConfigProvider>
-    <Steps css={styles} {...rest} percent={60}/>
-  </ConfigProvider>
-    ) 
+  return (
+    <ConfigProvider>
+      <Steps css={styles1} {...rest} percent={60} />
+    </ConfigProvider>
+  );
 };
 
 export default SiStep;
