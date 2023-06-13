@@ -134,6 +134,7 @@ function App() {
           type="inline"
           direction="horizontal"
           current={2}
+          status="error"
         />
       </div>
     </ConfigProvider>
