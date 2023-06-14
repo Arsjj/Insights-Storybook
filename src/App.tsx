@@ -1,33 +1,18 @@
 import { useState } from "react";
 
-import SePagination from "./components/Pagination";
-import SeCollapse from "./components/Collapse";
-import SeBadge from "./components/Badge";
-import SeCalendar from "./components/Calendar";
-import SeAvatar from "./components/Avatar";
-import SeEmpty from "./components/Empty";
-import SeTimeline from "./components/Timeline";
-import Section from "./components/Section";
-import SeTag from "./components/Tag";
-import { Button, ConfigProvider, Select } from "antd";
+
+import { ConfigProvider, Empty} from "antd";
 import {
-  CheckCircleTwoTone,
-  ClockCircleOutlined,
-  ExclamationCircleOutlined,
-  MinusCircleOutlined,
-  SyncOutlined,
   UserOutlined,
 } from "@ant-design/icons";
-import SeAlert from "./components/Alert";
 import useSeNotification from "./components/Notification";
-import SeCard from "./components/Card";
-import SiStep from "./components/SiSteps";
 import "./App.scss";
-import SiDatePicker from "./components/SiDatePicker";
-import SiMenu from "./components/SiMenu/indexe";
-import { css } from "@emotion/css";
 import SiLeftSidbar from "./Website Components/SiLeftSidebar";
-import SiBroadcrumb from "./components/Broadcrumb";
+import SiEmpty from "./components/Empty";
+import Icon from "./svg";
+import SiAvatar from "./components/Avatar";
+import SiTag from "./components/Tag/SiTag";
+import CheckableSiTag from "./components/Tag/CheckebleSiTae";
 
 const items = [
   {
@@ -108,19 +93,19 @@ function App() {
           colorTextDisabled: "#B6B9C2",
           colorBorder: "#D3D6DE",
           colorText: "#1C1C20",
-          fontSize: 16,
-          fontSizeLG: 20,
-          fontSizeHeading1: 32,
-          fontSizeHeading2: 28,
-          fontSizeHeading3: 24,
-          fontSizeHeading4: 20,
-          lineHeightSM: 1.375,
-          lineHeightHeading1: 3,
-          lineHeightHeading2: 2.5,
-          lineHeightHeading3: 2.25,
-          lineHeightHeading4: 1.75,
-          lineWidthFocus: 0,
-          paddingContentHorizontal: 16,
+          // fontSize: 16,
+          // fontSizeLG: 20,
+          // fontSizeHeading1: 32,
+          // fontSizeHeading2: 28,
+          // fontSizeHeading3: 24,
+          // fontSizeHeading4: 20,
+          // lineHeightSM: 1.375,
+          // lineHeightHeading1: 3,
+          // lineHeightHeading2: 2.5,
+          // lineHeightHeading3: 2.25,
+          // lineHeightHeading4: 1.75,
+          // lineWidthFocus: 0,
+          // paddingContentHorizontal: 16,
         },
       }}
     >
@@ -128,14 +113,24 @@ function App() {
       <div className="App">
 
         {/* <SiBroadcrumb /> */}
-
-        <SiStep
+        <SiEmpty />
+        <SiAvatar size={180} children="L" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRrpK0kJI2XZ3Wkt-K6Om3JpYdaxz2xYEgMqA&usqp=CAU"/>
+        
+        {/* <SiStep
           items={stepItems}
           type="inline"
-          direction="horizontal"
-          current={2}
-          status="error"
-        />
+          menuType
+          // direction="vertical"
+          current={3}
+          // status="error"
+        /> */}
+      {/* <SiTag add checked>Add</SiTag>
+      <SiTag >Add</SiTag>
+      <SiTag checkable>Add</SiTag> */}
+      {/* <SiTag checked/> */}
+      <SiTag children="TAG" icon={<UserOutlined />} iconPosition="double"/>
+      <CheckableSiTag checked children="fasdgasf" icon={<UserOutlined />} iconPosition="double" />
+
       </div>
     </ConfigProvider>
   );

@@ -6,7 +6,9 @@ import Team from "./Team/index.";
 import Cube from "./Cube";
 import Setting from "./Setting";
 import MessageQuestion from "./MessageQuestion";
+import TwoToneProfile from "./TwoToneProfile";
 import Logo from "./Sentium";
+import Empty from "./Empty";
 // type RFC<P = {}> = FunctionComponent<PropsWithChildren<P>>;
 
 interface Props {
@@ -43,7 +45,9 @@ const icons = {
   Cube: (color: string, size: number) => <Cube color={color} size={size} />,
   Setting: (color: string, size: number) => <Setting color={color} size={size} />,
   MessageQuestion: (color: string, size: number) => <MessageQuestion color={color} size={size} />,
+  TwoToneProfile: (color: string, size: number) => <TwoToneProfile color={color} size={size}/>,
   SentiumLogo: () => <Logo/>,
+  Empty: () => <Empty/>
 };
 
 const iconStyle = css`

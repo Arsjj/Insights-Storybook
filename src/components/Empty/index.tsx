@@ -1,13 +1,15 @@
-import React from 'react';
 import { Empty } from 'antd';
-import emptyImg from './Empty.png'
+import Icon from '../../svg';
+import { EmptyProps } from 'antd';
+import { FC } from 'react';
 
 
-const SeEmpty: React.FC = ({...rest}) => (
+const SiEmpty:FC<EmptyProps> = ({...rest}) => (
     <Empty
-        image = {emptyImg}
+        image = {<Icon name="Empty"/>}
+        description = ""
         {...rest}
     />
 );
 
-export default SeEmpty;
+export default SiEmpty;

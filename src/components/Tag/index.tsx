@@ -1,5 +1,5 @@
 import { FC, useState, useEffect, useRef } from "react";
-import { Input, Tag, TagProps, theme } from "antd";
+import { Input, Tag, TagProps } from "antd";
 import { CheckableTagProps } from "antd/es/tag";
 import { css } from "@emotion/react";
 import { PlusOutlined } from "@ant-design/icons";
@@ -8,7 +8,6 @@ import type { InputRef } from "antd";
 
 const { CheckableTag } = Tag;
 
-type iconPosition = "left" | "right" | "double";
 
 type AddProps = {
   initialTags?: Array<string>;
@@ -17,11 +16,8 @@ type AddProps = {
 };
 
 type Props = {
-  add?: true;
-  checkable?: true;
-  iconPosition?: iconPosition;
+  add?: TagProps;
 } & TagProps &
-  CheckableTagProps &
   AddProps;
 
 const styles = css`
@@ -39,6 +35,14 @@ const addTag = css`
   }
 `;
 
+const addedTagsContainerStyles = css`
+  display: flex;
+  flex-wrap: wrap;
+  margin: 20px 0;
+  gap: 5px;
+  row-gap: 5px;
+`;
+
 const addedStyles = css`
   @keyframes tag {
     from {
@@ -48,15 +52,14 @@ const addedStyles = css`
       opacity: 1;
     }
   }
-  padding: 2px 9px;
+  padding: 2px 0px;
   border-radius: 16px;
   animation-name: tag;
   animation-duration: 0.8s;
 `;
 
-const SiTag: FC<Props> = ({
+const AddSiTag: FC<Props & CheckableTagProps> = ({
   add,
-  checkable,
   icon,
   iconPosition = "left",
   initialTags = [],
@@ -133,32 +136,14 @@ const SiTag: FC<Props> = ({
   return (
     <>
       {checkable ? (
-        <CheckableTag css={styles} {...rest}>
+        <CheckableTag css={styles} {...CheckableTagProps}>
           {(left || double) && icon}
           <span>{children}</span>
           {(right || double) && icon}
         </CheckableTag>
       ) : add ? (
         <>
-          <div style={{}}>
-            {/* <TweenOneGroup
-          enter={{
-            scale: 0.8,
-            opacity: 0,
-            type: 'from',
-            duration: 100,
-          }}
-          onEnd={(e) => {
-            if (e.type === 'appear' || e.type === 'enter') {
-              (e.target as any).style = 'display: inline-block';
-            }
-          }}
-          leave={{ opacity: 0, width: 0, scale: 0, duration: 200 }}
-          appear={false}
-        > */}
-            {tagChild}
-            {/* </TweenOneGroup> */}
-          </div>
+          <div css={addedTagsContainerStyles}>{tagChild}</div>
           {inputVisible ? (
             <Input
               ref={inputRef}
@@ -174,9 +159,9 @@ const SiTag: FC<Props> = ({
           ) : (
             <Tag
               css={css`
-              ${styles};
-              ${addTag}
-            `}
+                ${styles};
+                ${addTag}
+              `}
               onClick={showInput}
               {...rest}
             >
@@ -195,4 +180,4 @@ const SiTag: FC<Props> = ({
   );
 };
 
-export default SiTag;
+export default AddSiTag;
