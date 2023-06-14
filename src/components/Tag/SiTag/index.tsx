@@ -9,7 +9,7 @@ const SiTag:FC<SiTagProps> = ({icon, iconPosition, children, ...rest}) => {
   const double = iconPosition === "double";
 
   return (
-    <Tag {...rest}>
+    <Tag css={tagStyles} {...rest}>
       {(left || double) && icon}
       <span className="text">{children}</span>
       {(right || double) && icon}
