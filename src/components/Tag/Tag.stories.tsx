@@ -1,5 +1,5 @@
 import type { Meta, StoryObj } from "@storybook/react";
-import SiTag from "./index";
+import SiTag from "./SiTag";
 
 const meta = {
   title: "Example/Tags",
@@ -76,9 +76,7 @@ export const Tag: Story = {
 
 export const ChackableTag: Story = {
   args: {
-    checkable: true,
     children: "Click me",
-    checked: true,
   },
 };
 
@@ -86,7 +84,6 @@ export const AddTag: Story = {
   args: {
     ...Tag.args,
     children: "New Tag",
-    add: true,
     color: "blue",
   },
 };

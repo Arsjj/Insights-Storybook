@@ -13,6 +13,7 @@ import Icon from "./svg";
 import SiAvatar from "./components/Avatar";
 import SiTag from "./components/Tag/SiTag";
 import CheckableSiTag from "./components/Tag/CheckebleSiTae";
+import AddSiTag from "./components/Tag/AddSiTag";
 
 const items = [
   {
@@ -129,6 +130,8 @@ function App() {
       <SiTag checkable>Add</SiTag> */}
       {/* <SiTag checked/> */}
       <SiTag children="TAG" icon={<UserOutlined />} iconPosition="double"/>
+      <SiTag closable children="asus"/>
+      <AddSiTag children="ADD"/>
       <CheckableSiTag checked children="fasdgasf" icon={<UserOutlined />} iconPosition="double" />
 
       </div>

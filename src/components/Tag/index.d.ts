@@ -2,11 +2,18 @@ import { TagProps, CheckableTagProps } from "antd/es/tag";
 
 type iconPosition = "left" | "right" | "double";
 
-type Props = {
+type IconProps = {
   icon?: React.ReactNode;
   iconPosition?: iconPosition;
 };
 
-export declare type ChackableSiTagProps = Props & CheckableTagProps;
-export declare type SiTagProps = Props & TagProps;
+type AddSiTagProps = {
+  initialTags?: Array<string>;
+  getTags?: (value: any) => void;
+  getNewAdded?: (value: string) => void;
+} & TagProps & IconProps;
+
+
+export declare type ChackableSiTagProps = IconProps & CheckableTagProps;
+export declare type SiTagProps = IconProps & TagProps;
 

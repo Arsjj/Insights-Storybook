@@ -5,7 +5,7 @@ import { tagStyles, checkableTagStyles } from "../styles";
 
 
 
-const CheckableSiTag: FC<ChackableSiTagProps> = ({iconPosition, icon, children, ...rest}) => {
+const CheckableSiTag: FC<ChackableSiTagProps> = ({iconPosition="left", icon, children, ...rest}) => {
   const left = iconPosition === "left";
   const right = iconPosition === "right";
   const double = iconPosition === "double";
