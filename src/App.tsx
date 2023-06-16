@@ -115,8 +115,8 @@ function App() {
 
         {/* <SiBroadcrumb /> */}
         <SiEmpty />
-        <SiAvatar size={180} children="L" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRrpK0kJI2XZ3Wkt-K6Om3JpYdaxz2xYEgMqA&usqp=CAU"/>
-        
+        <SiAvatar size={180} children="L" src="https://media.baselineresearch.com/images/197439/197439_full.jpg"/>
+        <SiAvatar size={198} children="N"/>
         {/* <SiStep
           items={stepItems}
           type="inline"

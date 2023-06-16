@@ -1,14 +1,7 @@
-import { FC } from "react";
-import type { MenuProps } from "antd";
-import { Menu } from "antd";
-
 import { css } from "@emotion/react";
 
-type SiMenuProps = MenuProps & {
-  inllineModeWithBadge?: boolean | undefined;
-};
 
-const styles = css`
+export const styles = css`
   .ant-menu-inline .ant-menu-item {
   }
 
@@ -65,13 +58,3 @@ const styles = css`
     margin-right: 12px;
   }
 `;
-
-const SiMenu: FC<SiMenuProps> = ({ inllineModeWithBadge, mode, ...rest }) => {
-  const inllineModeWithBadgeStyles = inllineModeWithBadge && mode === "inline";
-
-  return (
-    <Menu css={inllineModeWithBadgeStyles && styles} {...rest} mode={mode} />
-  );
-};
-
-export default SiMenu;

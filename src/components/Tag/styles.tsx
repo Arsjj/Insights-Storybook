@@ -23,7 +23,7 @@ export const tagStyles = css`
 
 export const closableStyles = css`
   &:active {
-    background-color: aqua; //gray-4
+    background-color: #E5E7ED; //gray-4
   }
 `;
 

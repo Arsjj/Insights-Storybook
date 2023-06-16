@@ -1,5 +1,5 @@
 import { useState } from "react";
-import SiMenu from "../../components/SiMenu/indexe";
+import SiMenu from "../../components/SiMenu";
 import Icon from "../../svg";
 import { MenuProps } from "antd";
 import { css } from "@emotion/react";

@@ -6,7 +6,6 @@ const styles = css`
   background: #d3d6de; //gray-5
 
   .ant-avatar-string {
-    width: 1em;
     color: #4a4a4e; //gray-3
     font-size: 2em;
   }
