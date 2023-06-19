@@ -1,9 +1,9 @@
 import type { Meta, StoryObj } from "@storybook/react";
-import SiTag from "./SiTag";
+import AddSiTag from ".";
 
 const meta = {
-  title: "Example/Tags/SiTag",
-  component: SiTag,
+  title: "Example/Tags/AddSiTag",
+  component: AddSiTag,
   tags: ["autodocs"],
   argTypes: {
     closable: {
@@ -72,22 +72,14 @@ const meta = {
       },
     },
   },
-} satisfies Meta<typeof SiTag>;
+} satisfies Meta<typeof AddSiTag>;
 
 export default meta;
 type Story = StoryObj<typeof meta>;
 
-export const Tag: Story = {
-  args: {
-    
-  },
-};
-
-
 
 export const AddTag: Story = {
   args: {
-    bordered: true,
     children: "New Tag",
     color: "blue",
   },

@@ -50,9 +50,11 @@ export const checkableTagStyles = css`
 export const addTag = css`
   /* display: flex;
   align-items: center; */
-  background: transparent !important;
   border: 1px dashed #D3D6DE !important; //gray-5
   gap: 3px;
+  &:not(.ant-tag-checkable){
+    background-color: transparent;
+  }
   &:hover {
     border: 1px dashed #B6B9C2; //gray-6
     cursor: pointer;

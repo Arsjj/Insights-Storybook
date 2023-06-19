@@ -20,8 +20,6 @@ const styles = css`
 
 
 const AddSiTag: FC<AddSiTagProps> = ({
-  icon,
-  iconPosition = "left",
   initialTags = [],
   getTags,
   getNewAdded,
@@ -61,9 +59,10 @@ const AddSiTag: FC<AddSiTagProps> = ({
     if (inputValue && tags.indexOf(inputValue) === -1) {
       setTags([...tags, inputValue]);
     }
-    if (getNewAdded) {
-      getNewAdded(inputValue);
-    }
+    // if (getNewAdded) {
+    //   getNewAdded(inputValue);
+    // }
+    console.log(getTags)
     setInputVisible(false);
     setInputValue("");
   };
