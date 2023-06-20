@@ -1,24 +1,23 @@
 import { FC } from "react";
 import { Avatar, AvatarProps } from "antd";
+import { AvatarSize } from "antd/es/avatar/SizeContext";
+import { styles, mediumStyles } from "./styles";
 import { css } from "@emotion/react";
 
-const styles = css`
-  background: #d3d6de; //gray-5
+interface IFinal extends Omit<AvatarProps, "size"> {
+  size?: AvatarSize | "medium";
+}
 
-  .ant-avatar-string {
-    color: #4a4a4e; //gray-3
-    font-size: 2em;
-  }
-
-  .css-mopims-Icon {
-    display: block;
-    position: relative;
-    top: 0.1em;
-  }
-`;
-
-const SiAvatar: FC<AvatarProps> = ({ ...rest }) => {
-  return <Avatar css={styles} {...rest} />;
+const SiAvatar: FC<IFinal> = ({ size, ...rest }) => {
+  return (
+    <>
+      {size === "medium" ? (
+        <Avatar css={css`${styles}; ${mediumStyles}`} {...rest} />
+      ) : (
+        <Avatar css={styles} size={size} {...rest} />
+      )}
+    </>
+  );
 };
 
 export default SiAvatar;

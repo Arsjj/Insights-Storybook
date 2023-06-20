@@ -14,6 +14,8 @@ import SiAvatar from "./components/Avatar";
 import SiTag from "./components/Tag/SiTag";
 import CheckableSiTag from "./components/Tag/CheckebleSiTae";
 import AddSiTag from "./components/Tag/AddSiTag";
+import Section from "./components/Section";
+import SiStep from "./components/SiSteps";
 
 const items = [
   {
@@ -41,12 +43,12 @@ const stepItems = [
   {
     title: "In Progress",
     icon: <UserOutlined />,
-    // description,
+    description: "feqrveqrv",
     // subTitle: 'Left 00:00:08',
   },
   {
     title: "In Progress",
-    // description: "dsfsdfsdf"
+    description: "dsfsdfsdf"
   },
   {
     title: "Waiting",
@@ -115,16 +117,18 @@ function App() {
 
         {/* <SiBroadcrumb /> */}
         <SiEmpty />
-        <SiAvatar size={180} children="L" src="https://media.baselineresearch.com/images/197439/197439_full.jpg"/>
-        <SiAvatar size="small" children="N"/>
-        {/* <SiStep
+        {/* <SiAvatar size={180} children="L" src="https://media.baselineresearch.com/images/197439/197439_full.jpg"/> */}
+        <SiAvatar size="medium" children="N"/>
+        <SiAvatar size="large" children="N"/>
+        <SiAvatar size="default" children="N"/>
+        <SiStep
           items={stepItems}
-          type="inline"
+        
           menuType
           // direction="vertical"
-          current={3}
+          current={5}
           // status="error"
-        /> */}
+        />
       {/* <SiTag add checked>Add</SiTag>
       <SiTag >Add</SiTag>
       <SiTag checkable>Add</SiTag> */}
@@ -132,6 +136,7 @@ function App() {
       <SiTag children="TAG" icon={<UserOutlined />} iconPosition="double"/>
       <SiTag closable children="asus"/>
       <AddSiTag children="ADD"/>
+      <Section text="gsfdgsdfgsdfgdsgdfg"/>
       <CheckableSiTag checked children="fasdgasf" icon={<UserOutlined />} iconPosition="double" />
 
       </div>

@@ -29,6 +29,7 @@ const styles = css`
   td {
     font-size: 13px;
     font-weight: normal;
+    vertical-align: text-top;
   }
 
   td:nth-child(1) {
@@ -116,6 +117,18 @@ const meta = {
         type: "select",
       },
       options: ["default", "navigation", "inline"],
+    },
+    menuType: {
+      description: "Additional inline type",
+      table: {
+        type: {
+          summary: "bollean",
+        },
+      },
+      // control: {
+      //   type: "radio",
+      // },
+      // options: ["true", "false"],
     },
     size: {
       description:
@@ -321,6 +334,7 @@ export const Steps: Story = {
     initial: 0,
     items: stepItems,
     responsive: true,
+    menuType: false
   },
 };
 
