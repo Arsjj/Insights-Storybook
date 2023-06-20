@@ -17,6 +17,11 @@ export const styles = css`
 export const mediumStyles = css`
   .ant-avatar-string {
     font-size: 16px;
-    line-height: 30px;
+  }
+`;
+
+export const largeStyles = css`
+  .ant-avatar-string {
+    font-size: 20px;
   }
 `;

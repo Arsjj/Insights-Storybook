@@ -1,7 +1,7 @@
 import { useState } from "react";
 
 
-import { ConfigProvider, Empty} from "antd";
+import { Avatar, ConfigProvider, Empty} from "antd";
 import {
   UserOutlined,
 } from "@ant-design/icons";
@@ -118,9 +118,10 @@ function App() {
         {/* <SiBroadcrumb /> */}
         <SiEmpty />
         {/* <SiAvatar size={180} children="L" src="https://media.baselineresearch.com/images/197439/197439_full.jpg"/> */}
-        <SiAvatar size="medium" children="N"/>
         <SiAvatar size="large" children="N"/>
-        <SiAvatar size="default" children="N"/>
+        <SiAvatar size="medium" children="N"/>
+        <SiAvatar size="small" children="N"/>
+        
         <SiStep
           items={stepItems}
         
