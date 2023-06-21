@@ -3,6 +3,10 @@ import { css } from "@emotion/react";
 export const styles = css`
   background: #d3d6de; //gray-5
 
+  &.ant-avatar-square{
+    border-radius: 8px;
+  }
+
   .ant-avatar-string {
     color: #4a4a4e; //gray-3
   }
@@ -25,3 +29,9 @@ export const largeStyles = css`
     font-size: 20px;
   }
 `;
+
+export const customStyles = css`
+.ant-avatar-string {
+    font-size: 24px;
+  }
+`

@@ -8,7 +8,6 @@ const styles = css`
   border-radius: 8px;
   margin: 40px 0;
 
-
   h3 {
     margin: 0;
   }
@@ -34,12 +33,11 @@ const styles = css`
 
   td:nth-child(1) {
     font-family: Nunito Sans;
-    font-weight: 600 ;
+    font-weight: 600;
     color: #2e3438;
     font-size: 15px;
     /* color: blue */
   }
-
 
   td:nth-child(2) {
     width: 300px;
@@ -47,7 +45,7 @@ const styles = css`
   }
 
   td:nth-child(3) {
-    color: #c41d7f
+    color: #c41d7f;
   }
 
   td {
@@ -65,7 +63,7 @@ const styles = css`
 `;
 
 const meta = {
-  title: "Example/SiSteps",
+  title: "Si/SiSteps",
   component: SiStep,
   tags: ["autodocs"],
   argTypes: {
@@ -116,20 +114,9 @@ const meta = {
       control: {
         type: "select",
       },
-      options: ["default", "navigation", "inline"],
+      options: ["default", "navigation", "inline", "inline-step"],
     },
-    menuType: {
-      description: "Additional inline type",
-      table: {
-        type: {
-          summary: "bollean",
-        },
-      },
-      // control: {
-      //   type: "radio",
-      // },
-      // options: ["true", "false"],
-    },
+
     size: {
       description:
         "To specify the size of the step bar, default and small are currently supported",
@@ -272,7 +259,7 @@ export const Steps: Story = {
           task.
         </p>
 
-        <SiStep {...args}/>
+        <SiStep {...args} />
 
         <div css={styles}>
           <h3>StepItem</h3>
@@ -334,10 +321,8 @@ export const Steps: Story = {
     initial: 0,
     items: stepItems,
     responsive: true,
-    menuType: false
   },
 };
-
 
 // export const Step:Story = {
 //   args: {

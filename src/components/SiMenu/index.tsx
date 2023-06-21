@@ -1,18 +1,17 @@
 import { FC } from "react";
-import type { MenuProps } from "antd";
 import { Menu } from "antd";
+import { SiMenuProps } from "./index.d";
 import { styles } from "./styles";
 
-
-type SiMenuProps = MenuProps & {
-  inllineModeWithBadge?: boolean | undefined;
-};
-
-const SiMenu: FC<SiMenuProps> = ({ inllineModeWithBadge, mode, ...rest }) => {
-  const inllineModeWithBadgeStyles = inllineModeWithBadge && mode === "inline";
-
+const SiMenu: FC<SiMenuProps> = ({ mode, ...rest }) => {
   return (
-    <Menu css={inllineModeWithBadgeStyles && styles} {...rest} mode={mode} />
+    <>
+      {mode === "inlineWithBadge" ? (
+        <Menu css={styles} mode="inline" {...rest} />
+      ) : (
+        <Menu mode={mode} {...rest}/>
+      )}
+    </>
   );
 };
 

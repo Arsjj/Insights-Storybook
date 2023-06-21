@@ -111,6 +111,8 @@ type Story = StoryObj<typeof meta>;
 export const Avatar: Story = {
   args: {
     children: "M",
-    size: 108
+    size: 108,
+    alt: "image",
+    shape: "square"
   },
 };

@@ -4,30 +4,28 @@ import {
   MailOutlined,
   SettingOutlined,
 } from "@ant-design/icons";
-import type { MenuProps } from "antd";
 import SiMenu from "./index";
-// import { Menu } from 'antd';
+import { SiMenuItem } from "./index.d";
 import type { Meta, StoryObj } from "@storybook/react";
 
-type MenuItem = Required<MenuProps>["items"][number];
 
 function getItem(
   label: React.ReactNode,
   key: React.Key,
   icon?: React.ReactNode,
-  children?: MenuItem[],
+  children?: SiMenuItem[],
   type?: "group"
-): MenuItem {
+): SiMenuItem {
   return {
     key,
     icon,
     children,
     label,
     type,
-  } as MenuItem;
+  } as SiMenuItem;
 }
 
-const items: MenuItem[] = [
+const items = [
   getItem("Navigation One", "sub1", <MailOutlined />, [
     getItem("Option 1", "1"),
     getItem("Option 2", "2"),
@@ -137,12 +135,17 @@ const meta = {
       description: "Type of Menu",
       table: {
         type: {
-          summary: "vertical | horizontal | inline",
+          summary: "vertical | horizontal | inline | inlineWithBadge",
         },
       },
       defaultValue: {
         summary: "vertical",
       },
+      control: {
+        type: "radio",
+      },
+      options: ["horizontal", "vertical", "inline", "inlineWithBadge"]
+
     },
     openKeys: {
       description: "Array with the keys of currently opened sub-menus",
@@ -275,8 +278,7 @@ type Story = StoryObj<typeof meta>;
 
 export const Menu: Story = {
   args: {
-    mode: "inline",
-    // openKeys: openKeys,
+    // mode: "inline",
     items: items,
   },
 };

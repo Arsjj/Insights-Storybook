@@ -1,12 +1,9 @@
-import type { ForwardRefExoticComponent, RefAttributes } from "react";
 import { AvatarProps } from "antd";
-import Group from "antd/es/avatar";
+import { AvatarSize } from "antd/es/avatar/SizeContext";
 
-export declare type CompoundedComponent = ForwardRefExoticComponent<
-  AvatarProps & RefAttributes<HTMLSpanElement>
-> & {
-  Group: typeof Group;
-};
+export interface SiAvatarProps extends Omit<AvatarProps, "size"> {
+  size?: AvatarSize | "medium";
+}
 
 
 // export { Group };

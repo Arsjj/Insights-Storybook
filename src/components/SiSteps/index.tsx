@@ -1,15 +1,12 @@
 import { FC } from "react";
-import { Steps, StepsProps } from "antd";
+import { Steps } from "antd";
+import { SiStepsProps } from "./index.d";
 import { styles, menuStyles } from "./styles";
 
-type SiStepsProps = {
-  menuType?: boolean;
-} & StepsProps;
-
-const SiStep: FC<SiStepsProps> = ({ menuType, type, ...rest }) => {
+const SiStep: FC<SiStepsProps> = ({type, ...rest }) => {
   return (
     <>
-      {menuType ? (
+      {type === "inline-step" ? (
         <Steps css={menuStyles} type="inline" {...rest} />
       ) : (
         <Steps css={styles} type={type} {...rest} />

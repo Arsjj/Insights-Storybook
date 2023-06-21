@@ -1,7 +1,7 @@
 import { useState } from "react";
 
 
-import { Avatar, ConfigProvider, Empty} from "antd";
+import {ConfigProvider} from "antd";
 import {
   UserOutlined,
 } from "@ant-design/icons";
@@ -118,16 +118,20 @@ function App() {
         {/* <SiBroadcrumb /> */}
         <SiEmpty />
         {/* <SiAvatar size={180} children="L" src="https://media.baselineresearch.com/images/197439/197439_full.jpg"/> */}
-        <SiAvatar size="large" children="N"/>
+        <SiAvatar size={108} children="N"/>
+        
+        <SiAvatar shape="square" size="large" children="N"/>
         <SiAvatar size="medium" children="N"/>
         <SiAvatar size="small" children="N"/>
         
         <SiStep
           items={stepItems}
+          type="inline-step"
+          // status="error"
         
-          menuType
+          
           // direction="vertical"
-          current={5}
+          current={3}
           // status="error"
         />
       {/* <SiTag add checked>Add</SiTag>
@@ -139,7 +143,11 @@ function App() {
       <AddSiTag children="ADD"/>
       <Section text="gsfdgsdfgsdfgdsgdfg"/>
       <CheckableSiTag checked children="fasdgasf" icon={<UserOutlined />} iconPosition="double" />
+      
 
+
+
+    
       </div>
     </ConfigProvider>
   );

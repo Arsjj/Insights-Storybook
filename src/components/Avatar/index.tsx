@@ -1,14 +1,10 @@
 import { FC } from "react";
-import { Avatar, AvatarProps } from "antd";
-import { AvatarSize } from "antd/es/avatar/SizeContext";
-import { styles, mediumStyles, largeStyles } from "./styles";
+import { Avatar } from "antd";
+import { SiAvatarProps } from "./index.d";
 import { css } from "@emotion/react";
+import { styles, mediumStyles, largeStyles, customStyles } from "./styles";
 
-interface IFinal extends Omit<AvatarProps, "size"> {
-  size?: AvatarSize | "medium";
-}
-
-const SiAvatar: FC<IFinal> = ({ size, ...rest }) => {
+const SiAvatar: FC<SiAvatarProps> = ({ size, ...rest }) => {
   return (
     <>
       {size === "medium" ? (
@@ -20,12 +16,31 @@ const SiAvatar: FC<IFinal> = ({ size, ...rest }) => {
           {...rest}
         />
       ) : size === "large" ? (
-        <Avatar css={css`
-        ${styles};
-        ${largeStyles}
-      `} size="large" {...rest} />
+        <Avatar
+          css={css`
+            ${styles};
+            ${largeStyles}
+          `}
+          size="large"
+          {...rest}
+        />
+      ) : size === "small" ? (
+        <Avatar
+          css={css`
+            ${styles};
+          `}
+          size={size}
+          {...rest}
+        />
       ) : (
-        <Avatar css={styles} size={size} {...rest} />
+        <Avatar
+          css={css`
+            ${styles};
+            ${customStyles}
+          `}
+          size={size}
+          {...rest}
+        />
       )}
     </>
   );

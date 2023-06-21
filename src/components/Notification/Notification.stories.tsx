@@ -12,7 +12,7 @@ const Notification = ({...args}: ArgsProps, type:IconType) => {
   return (
     <>
       {context}
-      <Button onClick={() => openNotification({...args}, "success")}>Click</Button>
+      <Button onClick={() => openNotification({...args})}>Click</Button>
     </>
   );
 };
@@ -32,7 +32,7 @@ type Story = StoryObj<typeof meta>;
 export const NotificationExample: Story = {
   render: (args, type) => { return (
     <div>
-      <Notification {...args}/>
+      <Notification {...args} />
     </div>
   )},
   args: {

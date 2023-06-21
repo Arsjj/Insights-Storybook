@@ -98,7 +98,7 @@ function SiLeftSidbar() {
       <div className="logo">
         <Icon name="SentiumLogo" />
       </div>
-      <SiMenu items={items} mode="inline" inllineModeWithBadge />
+      <SiMenu items={items} mode="inlineWithBadge" />
       <div className="messageContainer">
         <Icon name="MessageQuestion" />
         <span>Help</span>
