@@ -2,6 +2,7 @@ import { css } from "@emotion/react";
 
 export const styles = css`
   background: #d3d6de; //gray-5
+  border: none;
 
   &.ant-avatar-square{
     border-radius: 8px;

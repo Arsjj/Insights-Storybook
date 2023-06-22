@@ -97,7 +97,7 @@ const meta = {
     },
     showTitle: {
       description: "Show page item's title",
-      табле: {
+      table: {
         type: {
           summary: "boolean",
         },
@@ -109,7 +109,7 @@ const meta = {
     showSizeChanger: {
       description:
         "Determine whether to show pageSize select, it will be true when total > 50",
-      табле: {
+      table: {
         type: {
           summary: "boolean",
         },
@@ -117,7 +117,7 @@ const meta = {
     },
     showTotal: {
       description: "To display the total number and range",
-      табле: {
+      table: {
         type: {
           summary: "function(total, range)",
         },
@@ -128,7 +128,7 @@ const meta = {
     },
     simple: {
       description: "Whether to use simple mode",
-      табле: {
+      table: {
         type: {
           summary: "boolean",
         },
@@ -136,7 +136,7 @@ const meta = {
     },
     size: {
       description: "Specify the size of Pagination, can be set to small",
-      табле: {
+      table: {
         type: {
           summary: "default or small",
         },
@@ -148,7 +148,7 @@ const meta = {
 
     total: {
       description: "Total number of data items",
-      табле: {
+      table: {
         type: {
           summary: "number",
         },
@@ -159,7 +159,7 @@ const meta = {
     },
     showQuickJumper: {
       description: "Determine whether you can jump to pages directly",
-      табле: {
+      table: {
         type: {
           summary: "boolean or { goButton: ReactNode }",
         },
@@ -170,7 +170,7 @@ const meta = {
     },
     itemRender: {
       description: "To customize item's innerHTML",
-      табле: {
+      table: {
         type: {
           summary:
             "(page, type: 'page' | 'prev' | 'next', originalElement) => React.ReactNode",
@@ -180,7 +180,7 @@ const meta = {
     onChange: {
       description:
         "Called when the page number or pageSize is changed, and it takes the resulting page number and pageSize as its arguments",
-      табле: {
+      table: {
         type: {
           summery: "function(page, pageSize)",
         },
@@ -191,7 +191,7 @@ const meta = {
     },
     onShowSizeChange: {
       description: "Called when pageSize is changed",
-      табле: {
+      table: {
         type: {
           summary: "function(current, size)",
         },

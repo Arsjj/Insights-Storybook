@@ -1,14 +1,11 @@
 import { useRef } from "react";
 import { notification } from "antd";
 import {
-  ArgsProps,
-  IconType,
-} from "antd/es/notification/interface";
-import {
   CheckCircleTwoTone,
   CloseCircleTwoTone,
   InfoCircleTwoTone,
 } from "@ant-design/icons";
+import {SiNotificationProps} from "./index.d"
 
 import { css } from "@emotion/react";
 
@@ -23,6 +20,7 @@ const styles = css`
   }
 `;
 
+
 const useSiNotification = () => {
   const notificationContainerRef = useRef<HTMLDivElement>(null);
   const [api, contextHolder] = useNotification({
@@ -36,10 +34,7 @@ const useSiNotification = () => {
     error: <CloseCircleTwoTone twoToneColor="#EB5757" />,
   };
 
-  const openNotification = (
-    args: ArgsProps,
-    notificationType?: IconType
-  ): void => {
+  const openNotification = ({notificationType, ...args}:SiNotificationProps): void => {
     if (notificationType) {
       api[notificationType]({
         ...args,

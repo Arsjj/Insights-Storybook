@@ -23,7 +23,7 @@ export const tagStyles = css`
 
 export const closableStyles = css`
   &:active {
-    background-color: #E5E7ED; //gray-4
+    background-color: #e5e7ed; //gray-4
   }
 `;
 
@@ -45,18 +45,16 @@ export const checkableTagStyles = css`
   }
 `;
 
-
-
 export const addTag = css`
   /* display: flex;
   align-items: center; */
-  border: 1px dashed #D3D6DE !important; //gray-5
+  border: 1px dashed #d3d6de !important; //gray-5
   gap: 3px;
-  &:not(.ant-tag-checkable){
+  &:not(.ant-tag-checkable) {
     background-color: transparent;
   }
   &:hover {
-    border: 1px dashed #B6B9C2; //gray-6
+    border: 1px dashed #b6b9c2; //gray-6
     cursor: pointer;
   }
 `;
@@ -84,3 +82,9 @@ export const addedStyles = css`
   animation-duration: 0.8s;
 `;
 
+export const inputStyles = css`
+  background: transparent;
+  padding: 2px 9px;
+  border-radius: 16px;
+  height: 26px;
+`;

@@ -7,13 +7,6 @@ type IconProps = {
   iconPosition?: iconPosition;
 };
 
-type AddSiTagProps = {
-  initialTags?: Array<string>;
-  getTags?: (value: any) => void;
-  getNewAdded?: (value: string) => void;
-} & TagProps & IconProps;
-
-
 export declare type ChackableSiTagProps = IconProps & CheckableTagProps;
 export declare type SiTagProps = IconProps & TagProps;
 

@@ -1,7 +1,7 @@
 import { useState } from "react";
 
 
-import {ConfigProvider} from "antd";
+import {Button, ConfigProvider} from "antd";
 import {
   UserOutlined,
 } from "@ant-design/icons";
@@ -13,7 +13,7 @@ import Icon from "./svg";
 import SiAvatar from "./components/Avatar";
 import SiTag from "./components/Tag/SiTag";
 import CheckableSiTag from "./components/Tag/CheckebleSiTae";
-import AddSiTag from "./components/Tag/AddSiTag";
+import { useAddSiTag } from "./components/Tag/AddSiTag";
 import Section from "./components/Section";
 import SiStep from "./components/SiSteps";
 
@@ -63,9 +63,12 @@ const stepItems = [
   },
 ];
 
+
 function App() {
   const [selected, setSelected] = useState(false);
   const { openNotification, context } = useSeNotification();
+  const {addSiTag, addedSiTags, siTags } = useAddSiTag()
+  console.log(siTags)
 
   const handleSelect = () => {
     setSelected((selected) => !selected);
@@ -115,34 +118,34 @@ function App() {
         <SiLeftSidbar />
       <div className="App">
 
-        {/* <SiBroadcrumb /> */}
-        <SiEmpty />
-        {/* <SiAvatar size={180} children="L" src="https://media.baselineresearch.com/images/197439/197439_full.jpg"/> */}
-        <SiAvatar size={108} children="N"/>
-        
-        <SiAvatar shape="square" size="large" children="N"/>
-        <SiAvatar size="medium" children="N"/>
-        <SiAvatar size="small" children="N"/>
+        {/* <SiEmpty /> */}
+        <SiAvatar size={200} children="L" src="https://qph.cf2.quoracdn.net/main-qimg-594e3c8f8659ce426902eb9fd6bebc0f-lq"/>
+
+
         
         <SiStep
           items={stepItems}
           type="inline-step"
           // status="error"
-        
+          
           
           // direction="vertical"
           current={3}
           // status="error"
-        />
+          />
+          {addSiTag({tagProps: {children: "sdfsdf"}, inputProps:{}})}
+          {addedSiTags}
+          {context}
+          <Button onClick={() => openNotification({message: "fdsgsdfgsdf",  notificationType:"success"})} /> 
       {/* <SiTag add checked>Add</SiTag>
       <SiTag >Add</SiTag>
       <SiTag checkable>Add</SiTag> */}
       {/* <SiTag checked/> */}
-      <SiTag children="TAG" icon={<UserOutlined />} iconPosition="double"/>
+      {/* <SiTag children="TAG" icon={<UserOutlined />} iconPosition="double"/>
       <SiTag closable children="asus"/>
       <AddSiTag children="ADD"/>
       <Section text="gsfdgsdfgsdfgdsgdfg"/>
-      <CheckableSiTag checked children="fasdgasf" icon={<UserOutlined />} iconPosition="double" />
+      <CheckableSiTag checked children="fasdgasf" icon={<UserOutlined />} iconPosition="double" /> */}
       
 
 
