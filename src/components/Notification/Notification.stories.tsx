@@ -4,11 +4,11 @@ import useSiNotification from "./index";
 import { SiNotificationProps } from "./index.d";
 
 const Notification = ({ ...args }: SiNotificationProps) => {
-  const { openNotification, context } = useSiNotification();
+  const { openNotification, notificationContext } = useSiNotification();
 
   return (
     <>
-      {context}
+      {notificationContext}
       <Button onClick={() => openNotification({ ...args })}>Click</Button>
     </>
   );
@@ -85,7 +85,8 @@ const meta = {
       },
     },
     placement: {
-      description: "Position of Notification, can be one of topLeft topRight bottomLeft bottomRight",
+      description:
+        "Position of Notification, can be one of topLeft topRight bottomLeft bottomRight",
       table: {
         type: {
           summary: "string",
@@ -104,7 +105,8 @@ const meta = {
       },
     },
     onClick: {
-      description: "Specify a function that will be called when the notification is clicked",
+      description:
+        "Specify a function that will be called when the notification is clicked",
       table: {
         type: {
           summary: "function",
@@ -120,7 +122,8 @@ const meta = {
       },
     },
     props: {
-      description: "An object that can contain data-*, aria-*, or role props, to be put on the notification div. This currently only allows data-testid instead of data-* in TypeScript. See https://github.com/microsoft/TypeScript/issues/28960.	Object",
+      description:
+        "An object that can contain data-*, aria-*, or role props, to be put on the notification div. This currently only allows data-testid instead of data-* in TypeScript. See https://github.com/microsoft/TypeScript/issues/28960.	Object",
       table: {
         type: {
           summary: "Object",
@@ -138,8 +141,21 @@ export const NotificationExample: Story = {
     return (
       <>
         <div>
-          UseSINotification is a hook which returns openNotification function
-          and context{" "}
+          UseSINotification is a hook which returns 2 values
+          <ul>
+            <li>openNotification function</li>
+            <li>notificationContext</li>
+          </ul>
+          <div>
+            We are destructuring the returned values from UseSINotification
+            <div>
+              <code>
+                const {"{openNotification, notificationContext}"} =
+                useSiNotification()
+              </code>
+            </div>
+            <p>NotificationContext</p>
+          </div>
         </div>
         <div>
           <Notification {...type} />

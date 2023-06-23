@@ -49,7 +49,7 @@ const useSiNotification = () => {
 
   return {
     openNotification: openNotification,
-    context: (
+    notificationContext: (
       <div ref={notificationContainerRef} css={styles}>
         {contextHolder}
       </div>

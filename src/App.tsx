@@ -16,6 +16,7 @@ import CheckableSiTag from "./components/Tag/CheckebleSiTae";
 import { useAddSiTag } from "./components/Tag/AddSiTag";
 import Section from "./components/Section";
 import SiStep from "./components/SiSteps";
+import SiRate from "./components/Rate";
 
 const items = [
   {
@@ -66,7 +67,7 @@ const stepItems = [
 
 function App() {
   const [selected, setSelected] = useState(false);
-  const { openNotification, context } = useSeNotification();
+  const { openNotification, notificationContext } = useSeNotification();
   const {addSiTag, addedSiTags, siTags } = useAddSiTag()
   console.log(siTags)
 
@@ -120,7 +121,7 @@ function App() {
 
         {/* <SiEmpty /> */}
         <SiAvatar size={200} children="L" src="https://qph.cf2.quoracdn.net/main-qimg-594e3c8f8659ce426902eb9fd6bebc0f-lq"/>
-
+        <SiRate value={5}/>
 
         
         <SiStep
@@ -135,7 +136,7 @@ function App() {
           />
           {addSiTag({tagProps: {children: "sdfsdf"}, inputProps:{}})}
           {addedSiTags}
-          {context}
+          {notificationContext}
           <Button onClick={() => openNotification({message: "fdsgsdfgsdf",  notificationType:"success"})} /> 
       {/* <SiTag add checked>Add</SiTag>
       <SiTag >Add</SiTag>
