@@ -60,6 +60,7 @@ export const styles = css`
 
 export const menuStyles = css`
   background-color: transparent;
+  width: fit-content !important;
 
   .ant-steps-item-container {
     margin: 0 !important;

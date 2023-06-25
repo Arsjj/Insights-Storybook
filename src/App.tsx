@@ -17,6 +17,7 @@ import { useAddSiTag } from "./components/Tag/AddSiTag";
 import Section from "./components/Section";
 import SiStep from "./components/SiSteps";
 import SiRate from "./components/Rate";
+import SiDatePicker from "./components/SiDatePicker";
 
 const items = [
   {
@@ -117,11 +118,13 @@ function App() {
       }}
     >
         <SiLeftSidbar />
+        
+        {/* <Icon className="background" name="SiBackGround" /> */}
       <div className="App">
 
         {/* <SiEmpty /> */}
         <SiAvatar size={200} children="L" src="https://qph.cf2.quoracdn.net/main-qimg-594e3c8f8659ce426902eb9fd6bebc0f-lq"/>
-        <SiRate value={5}/>
+        <SiRate value={4}/>
 
         
         <SiStep
@@ -137,7 +140,7 @@ function App() {
           {addSiTag({tagProps: {children: "sdfsdf"}, inputProps:{}})}
           {addedSiTags}
           {notificationContext}
-          <Button onClick={() => openNotification({message: "fdsgsdfgsdf",  notificationType:"success"})} /> 
+          <Button size="large" style={{width: "200px"}} children="Click for notification" onClick={() => openNotification({message: "fdsgsdfgsdf",  notificationType:"success"})} /> 
       {/* <SiTag add checked>Add</SiTag>
       <SiTag >Add</SiTag>
       <SiTag checkable>Add</SiTag> */}
@@ -150,7 +153,7 @@ function App() {
       
 
 
-
+   <SiDatePicker />
     
       </div>
     </ConfigProvider>

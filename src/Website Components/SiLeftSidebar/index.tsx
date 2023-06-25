@@ -36,6 +36,7 @@ const styles = css`
   display: flex;
   flex-direction: column;
   position: absolute;
+  z-index: 1;
   width: 280px;
   height: 100%;
   background-color: #eff1f5; //grey2

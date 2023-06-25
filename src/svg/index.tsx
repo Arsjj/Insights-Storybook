@@ -9,6 +9,7 @@ import MessageQuestion from "./MessageQuestion";
 import TwoToneProfile from "./TwoToneProfile";
 import Logo from "./Sentium";
 import Empty from "./Empty";
+import SiBackground from "./Background";
 // type RFC<P = {}> = FunctionComponent<PropsWithChildren<P>>;
 
 interface Props {
@@ -47,7 +48,8 @@ const icons = {
   MessageQuestion: (color: string, size: number) => <MessageQuestion color={color} size={size} />,
   TwoToneProfile: (color: string, size: number) => <TwoToneProfile color={color} size={size}/>,
   SentiumLogo: () => <Logo/>,
-  Empty: () => <Empty/>
+  Empty: () => <Empty/>,
+  SiBackGround: () => <SiBackground />
 };
 
 const iconStyle = css`
