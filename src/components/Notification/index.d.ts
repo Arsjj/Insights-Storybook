@@ -4,5 +4,5 @@ import {
   } from "antd/es/notification/interface";
 
 export declare type SiNotificationProps = {
-    notificationType?: IconType | undefined,
+    type?: IconType | undefined,
   } & ArgsProps

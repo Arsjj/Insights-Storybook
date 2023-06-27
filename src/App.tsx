@@ -13,7 +13,7 @@ import Icon from "./svg";
 import SiAvatar from "./components/Avatar";
 import SiTag from "./components/Tag/SiTag";
 import CheckableSiTag from "./components/Tag/CheckebleSiTae";
-import { useAddSiTag } from "./components/Tag/AddSiTag";
+import useAddSiTag from "./components/Tag/useAddSiTag";
 import Section from "./components/Section";
 import SiStep from "./components/SiSteps";
 import SiRate from "./components/Rate";
@@ -140,7 +140,7 @@ function App() {
           {addSiTag({tagProps: {children: "sdfsdf"}, inputProps:{}})}
           {addedSiTags}
           {notificationContext}
-          <Button size="large" style={{width: "200px"}} children="Click for notification" onClick={() => openNotification({message: "fdsgsdfgsdf",  notificationType:"success"})} /> 
+          <Button size="large" style={{width: "200px"}} children="Click for notification" onClick={() => openNotification({message: "fdsgsdfgsdf", type:"success"})} /> 
       {/* <SiTag add checked>Add</SiTag>
       <SiTag >Add</SiTag>
       <SiTag checkable>Add</SiTag> */}

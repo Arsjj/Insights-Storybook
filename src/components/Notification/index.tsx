@@ -34,11 +34,11 @@ const useSiNotification = () => {
     error: <CloseCircleTwoTone twoToneColor="#EB5757" />,
   };
 
-  const openNotification = ({notificationType, ...args}:SiNotificationProps): void => {
-    if (notificationType) {
-      api[notificationType]({
+  const openNotification = ({type, ...args}:SiNotificationProps): void => {
+    if (type) {
+      api[type]({
         ...args,
-        icon: icons[notificationType],
+        icon: icons[type],
       });
     } else {
       api.open({

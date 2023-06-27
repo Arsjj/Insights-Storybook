@@ -2,21 +2,28 @@ import type { Meta, StoryObj } from "@storybook/react";
 import { Button } from "antd";
 import useSiNotification from "./index";
 import { SiNotificationProps } from "./index.d";
+import { css } from "@emotion/react";
 
-const Notification = ({ ...args }: SiNotificationProps) => {
+const styles = css`
+  margin-bottom: 20px;
+`;
+
+const SiNotification = ({ ...args }: SiNotificationProps) => {
   const { openNotification, notificationContext } = useSiNotification();
 
   return (
     <>
       {notificationContext}
-      <Button onClick={() => openNotification({ ...args })}>Click</Button>
+      <Button css={styles} onClick={() => openNotification({ ...args })}>
+        Click me
+      </Button>
     </>
   );
 };
 
 const meta = {
-  title: "Example/useSiNotification",
-  component: Notification,
+  title: "SI/useSiNotification",
+  component: SiNotification,
   tags: ["autodocs"],
   argTypes: {
     btn: {
@@ -95,6 +102,34 @@ const meta = {
       defaultValue: {
         summary: "topRight",
       },
+      control: {
+        type: "select",
+      },
+      options: [
+        "top",
+        "topLeft",
+        "topRight",
+        "bottom",
+        "bottomLeft",
+        "bottomRight",
+      ],
+    },
+    type: {
+      description: "Ther are 4 options for notification type",
+      table: {
+        type: {
+          summary: "success | info | error | warning",
+        },
+      },
+      control: {
+        type: "select",
+      },
+      options: [
+        "success",
+        "info",
+        "error",
+        "warning"
+      ],
     },
     style: {
       description: "Customized inline style",
@@ -121,25 +156,28 @@ const meta = {
         },
       },
     },
-    props: {
-      description:
-        "An object that can contain data-*, aria-*, or role props, to be put on the notification div. This currently only allows data-testid instead of data-* in TypeScript. See https://github.com/microsoft/TypeScript/issues/28960.	Object",
-      table: {
-        type: {
-          summary: "Object",
-        },
-      },
-    },
+    // props: {
+    //   description:
+    //     "An object that can contain data-*, aria-*, or role props, to be put on the notification div. This currently only allows data-testid instead of data-* in TypeScript. See https://github.com/microsoft/TypeScript/issues/28960.	Object",
+    //   table: {
+    //     type: {
+    //       summary: "Object",
+    //     },
+    //   },
+    // },
   },
-} satisfies Meta<typeof Notification>;
+} satisfies Meta<typeof SiNotification>;
 
 export default meta;
 type Story = StoryObj<typeof meta>;
 
 export const NotificationExample: Story = {
-  render: (type) => {
+  render: (args) => {
     return (
       <>
+        <div>
+          <SiNotification {...args} />
+        </div>
         <div>
           UseSINotification is a hook which returns 2 values
           <ul>
@@ -154,18 +192,18 @@ export const NotificationExample: Story = {
                 useSiNotification()
               </code>
             </div>
-            <p>NotificationContext</p>
+            <p>
+              Use notificationContext above colling openNotification() with
+              following props{" "}
+            </p>
           </div>
-        </div>
-        <div>
-          <Notification {...type} />
         </div>
       </>
     );
   },
   args: {
     message: "Example",
-    placement: "bottom",
-    notificationType: "success",
+    placement: "topRight",
+    type: "success",
   },
 };
