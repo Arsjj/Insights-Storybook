@@ -18,6 +18,8 @@ import Section from "./components/Section";
 import SiStep from "./components/SiSteps";
 import SiRate from "./components/Rate";
 import SiDatePicker from "./components/SiDatePicker";
+import Header from "./Website Components/Header";
+import SiSwitch from "./components/SiSwitch";
 
 const items = [
   {
@@ -69,7 +71,7 @@ const stepItems = [
 function App() {
   const [selected, setSelected] = useState(false);
   const { openNotification, notificationContext } = useSeNotification();
-  const {addSiTag, addedSiTags, siTags } = useAddSiTag()
+  const {addSiTag, addedSiTags, siTags } = useAddSiTag([])
   console.log(siTags)
 
   const handleSelect = () => {
@@ -121,13 +123,20 @@ function App() {
         
         {/* <Icon className="background" name="SiBackGround" /> */}
       <div className="App">
+        <Header name="Alejandro" count={7} text="Welcome back" src="https://i.pinimg.com/originals/12/98/33/1298337b56128623820952a6024b803e.jpg"/>
 
         {/* <SiEmpty /> */}
         <SiAvatar size={200} children="L" src="https://qph.cf2.quoracdn.net/main-qimg-594e3c8f8659ce426902eb9fd6bebc0f-lq"/>
         <SiRate value={4}/>
 
+        <SiSwitch  />
+        <SiSwitch />
+        <SiSwitch  disabled/>
+        <SiSwitch  disabled defaultChecked/>
+        <SiSwitch  loading defaultChecked/>
+
         
-        <SiStep
+        {/* <SiStep
           items={stepItems}
           type="inline-step"
           // status="error"
@@ -136,7 +145,7 @@ function App() {
           // direction="vertical"
           current={3}
           // status="error"
-          />
+          /> */}
           {addSiTag({tagProps: {children: "sdfsdf"}, inputProps:{}})}
           {addedSiTags}
           {notificationContext}

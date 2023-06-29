@@ -18,7 +18,7 @@ const styles = css`
   border-radius: 16px;
 `;
 
-export const useAddSiTag = (initialTags: Array<string>) => {
+export const useAddSiTag = (initialTags?: Array<string>) => {
   const [tags=[], setTags] = useState(initialTags);
   const [inputVisible, setInputVisible] = useState(false);
   const [inputValue, setInputValue] = useState("");

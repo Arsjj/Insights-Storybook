@@ -6,27 +6,30 @@
 
  body {
   margin:  0;
+  font-family: -apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,'Helvetica Neue',Arial,'Noto Sans',sans-serif,'Apple Color Emoji','Segoe UI Emoji','Segoe UI Symbol','Noto Color Emoji';
  }
 
  .App {
   display: grid;
+  gap: 20px;
   // justify-content: center;
   position: absolute;
-  padding: 5%;
-  width: 90%;
+  // padding: 2%;
+  width: 80%;
   left: 300px;
   // top: 50px;
   // gap: 2rem;
   //  background-color: gray;
-  background:
-    radial-gradient(circle at 0% 0%, rgba(55,222,222,.8), rgba(55,220,222,0) 80%), 
-    radial-gradient(circle at 100% 0%, rgba(255,20,50,.8), rgba(255,20,222,0) 50%), 
-    radial-gradient(circle at 100% 80%, rgba(20,25,250,.7), rgba(255,0,0,0) 80%), 
-    radial-gradient(circle at 80% 50%, rgba(255,235,22,.7), rgba(255,0,0,.0) 80%), 
-    radial-gradient(circle at 0% 100%, rgba(231,20,255,.95), rgba(200,222,255,0) 90%);
-  background-size: cover;
-  background-position: center;
-  background-attachment: fixed;
+  // background-color: gray;
+  // background:
+  //   radial-gradient(circle at 0% 0%, rgba(55,222,222,.8), rgba(55,220,222,0) 80%), 
+  //   radial-gradient(circle at 100% 0%, rgba(255,20,50,.8), rgba(255,20,222,0) 50%), 
+  //   radial-gradient(circle at 100% 80%, rgba(20,25,250,.7), rgba(255,0,0,0) 80%), 
+  //   radial-gradient(circle at 80% 50%, rgba(255,235,22,.7), rgba(255,0,0,.0) 80%), 
+  //   radial-gradient(circle at 0% 100%, rgba(231,20,255,.95), rgba(200,222,255,0) 90%);
+  // background-size: cover;
+  // background-position: center;
+  // background-attachment: fixed;
 
 
 
