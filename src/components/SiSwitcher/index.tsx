@@ -8,12 +8,24 @@ const styles = css`
   background: var(--gray-gray-4, #e5e7ed);
   width: fit-content;
 
-  
-  
+  /* &.ant-radio-group-solid {
+      .ant-radio-button-wrapper-checked:not(
+          .ant-radio-button-wrapper-disabled
+        ) {
+        color: #83848A;
+        background: #FFFFFF;
+        border-color: #2751f4;
+      }
+    } */
+
   .ant-radio-button-wrapper {
     border: none;
     border-radius: 8px;
     background: transparent;
+
+    :hover{
+      color: #83848A;
+    }
 
     &::before {
       background-color: transparent;
@@ -23,27 +35,24 @@ const styles = css`
 
   .ant-radio-button-wrapper-checked {
     border: none;
+    color: #83848A !important;
+        background: #FFFFFF !important;
     &:not(.ant-radio-button-wrapper-disabled) {
       /* background-color: #FFFFFF; */
     }
-
 
     &:not(.ant-radio-button-wrapper-disabled):hover::before {
       background-color: transparent;
     }
 
-    .ant-radio-group-solid :where(.css-dev-only-do-not-override-1mwfiz8).ant-radio-button-wrapper-checked:not(.ant-radio-button-wrapper-disabled) {
-    color: #fff;
-    background: #fadb14;
-    border-color: #2751f4;
-}
+    
   }
 `;
 const SiSwitcher: React.FC = () => (
   <>
     <Radio.Group css={styles} defaultValue="a" buttonStyle="solid">
-      <Radio.Button value="a">Hangzhou</Radio.Button>
-      <Radio.Button value="d">Chengdu</Radio.Button>
+      <Radio.Button value="a">Hahou</Radio.Button>
+      <Radio.Button value="d">Chgdu</Radio.Button>
     </Radio.Group>
   </>
 );
