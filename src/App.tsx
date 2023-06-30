@@ -20,6 +20,7 @@ import SiRate from "./components/Rate";
 import SiDatePicker from "./components/SiDatePicker";
 import Header from "./Website Components/Header";
 import SiSwitch from "./components/SiSwitch";
+import SiSwitcher from "./components/SiSwitcher";
 
 const items = [
   {
@@ -134,6 +135,8 @@ function App() {
         <SiSwitch  disabled/>
         <SiSwitch  disabled defaultChecked/>
         <SiSwitch  loading defaultChecked/>
+
+        <SiSwitcher />
 
         
         {/* <SiStep
