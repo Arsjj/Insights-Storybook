@@ -38,7 +38,7 @@ const styles = css`
   position: absolute;
   z-index: 1;
   width: 280px;
-  height: 100%;
+  height: 100vh;
   background-color: #eff1f5; //grey2
   padding: 16px 0 20px 10px;
   color: #4a4a4e !important; //grey8

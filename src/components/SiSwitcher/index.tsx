@@ -1,42 +1,36 @@
 import React from "react";
 import { Radio } from "antd";
 import { css } from "@emotion/react";
+import { MenuFoldOutlined, UserAddOutlined } from "@ant-design/icons";
 
 const styles = css`
   border-radius: 8px;
-  border: 1px solid var(--gray-gray-6, #b6b9c2);
-  background: var(--gray-gray-4, #e5e7ed);
+  border: 1px solid #d3d6de; //gray-5
+  background: #e5e7ed;
   width: fit-content;
-
-  /* &.ant-radio-group-solid {
-      .ant-radio-button-wrapper-checked:not(
-          .ant-radio-button-wrapper-disabled
-        ) {
-        color: #83848A;
-        background: #FFFFFF;
-        border-color: #2751f4;
-      }
-    } */
 
   .ant-radio-button-wrapper {
     border: none;
     border-radius: 8px;
     background: transparent;
+    padding: 0 8px;
+    color: #83848a;
+    /* font-size: 12px; */
+    font-weight: 600;
 
-    :hover{
-      color: #83848A;
+    :hover {
+      color: #83848a;
     }
 
     &::before {
       background-color: transparent;
-      /* border: 0px */
     }
   }
 
   .ant-radio-button-wrapper-checked {
     border: none;
-    color: #83848A !important;
-        background: #FFFFFF !important;
+    color: #1c1c20 !important;
+    background: #ffffff !important;
     &:not(.ant-radio-button-wrapper-disabled) {
       /* background-color: #FFFFFF; */
     }
@@ -44,15 +38,18 @@ const styles = css`
     &:not(.ant-radio-button-wrapper-disabled):hover::before {
       background-color: transparent;
     }
-
-    
   }
 `;
+
 const SiSwitcher: React.FC = () => (
   <>
     <Radio.Group css={styles} defaultValue="a" buttonStyle="solid">
-      <Radio.Button value="a">Hahou</Radio.Button>
-      <Radio.Button value="d">Chgdu</Radio.Button>
+      <Radio.Button value="a">
+        <UserAddOutlined /> Item
+      </Radio.Button>
+      <Radio.Button value="d">
+        <MenuFoldOutlined /> Item
+      </Radio.Button>
     </Radio.Group>
   </>
 );
