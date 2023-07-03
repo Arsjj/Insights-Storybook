@@ -116,3 +116,11 @@ export const Avatar: Story = {
     shape: "square"
   },
 };
+
+Avatar.parameters = {
+  design: {
+    type: "figma",
+    url: "https://www.figma.com/file/gHEpaCzR2ATF1vuSo2pB0n/S.I%3AFinal_Design_System?type=design&node-id=1-12973&mode=design&t=EngH59I8FI7MjHTI-0"
+
+  }
+}

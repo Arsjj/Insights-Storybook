@@ -11,13 +11,13 @@
  }
 
  .App {
-  display: grid;
+  display: flex;
   flex-direction: column;
   gap: 20px;
   // justify-content: center;
   position: absolute;
   // padding: 2%;
-  width: 80%;
+  width: 70%;
   left: 300px;
   // top: 50px;
   // gap: 2rem;

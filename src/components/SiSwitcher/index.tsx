@@ -32,7 +32,6 @@ const styles = css`
     color: #1c1c20 !important;
     background: #ffffff !important;
     &:not(.ant-radio-button-wrapper-disabled) {
-      /* background-color: #FFFFFF; */
     }
 
     &:not(.ant-radio-button-wrapper-disabled):hover::before {
