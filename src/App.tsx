@@ -3,6 +3,8 @@ import { useState } from "react";
 
 import {Button, ConfigProvider} from "antd";
 import {
+  AppstoreOutlined,
+  MailOutlined,
   UserOutlined,
 } from "@ant-design/icons";
 import useSeNotification from "./components/Notification";
@@ -21,52 +23,48 @@ import SiDatePicker from "./components/SiDatePicker";
 import Header from "./Website Components/Header";
 import SiSwitch from "./components/SiSwitch";
 import SiDropdown from "./components/Dropdown";
+import SiMenu from "./components/SiMenu";
+import Navbar from "./Website Components/Navbar";
+
+// const items = [
+//   {
+//     label: "2015-09-01",
+//     children: "Create a services",
+//   },
+//   {
+//     label: "2015-09-01 09:12:11",
+//     children: "Solve initial network problems",
+//   },
+//   {
+//     children: "Technical testing",
+//   },
+//   {
+//     label: "2015-09-01 09:12:11",
+//     children: "Network problems being solved",
+//   },
+// ];
+
 
 const items = [
   {
-    label: "2015-09-01",
-    children: "Create a services",
+    label: 'Navigation One',
+    key: 'mail',
+    icon: <MailOutlined />,
   },
   {
-    label: "2015-09-01 09:12:11",
-    children: "Solve initial network problems",
+    label: 'Navigation Two',
+    key: 'app',
+    icon: <AppstoreOutlined />,
   },
   {
-    children: "Technical testing",
-  },
-  {
-    label: "2015-09-01 09:12:11",
-    children: "Network problems being solved",
-  },
-];
+    label: 'Navigation Two',
+    key: 'ap01p',
+    icon: <AppstoreOutlined />,
+    disabled: true,
 
-const stepItems = [
-  {
-    title: "Finished",
-    // description,
   },
-  {
-    title: "In Progress",
-    icon: <UserOutlined />,
-    description: "feqrveqrv",
-    // subTitle: 'Left 00:00:08',
-  },
-  {
-    title: "In Progress",
-    description: "dsfsdfsdf"
-  },
-  {
-    title: "Waiting",
-    icon: <UserOutlined />,
-    // description,
-  },
-  {
-    title: "Waiting",
-    icon: <UserOutlined />,
+]
 
-    // description,
-  },
-];
 
 
 function App() {
@@ -124,8 +122,9 @@ function App() {
         
         {/* <Icon className="background" name="SiBackGround" /> */}
       <div className="App">
+        <Navbar />
         <Header name="Alejandro" count={7} text="Welcome back" src="https://i.pinimg.com/originals/12/98/33/1298337b56128623820952a6024b803e.jpg"/>
-
+         
         {/* <SiEmpty /> */}
         <SiAvatar size={200} children="L" src="https://qph.cf2.quoracdn.net/main-qimg-594e3c8f8659ce426902eb9fd6bebc0f-lq"/>
         <SiRate value={4}/>
@@ -148,7 +147,7 @@ function App() {
           current={3}
           // status="error"
           /> */}
-           <SiDropdown rotatingArrow placement="bottomRight" />
+           <SiDropdown rotatingArrow placement="bottomRight"  />
           {notificationContext}
           {addSiTag({tagProps: {children: "sdfsdf"}, inputProps:{}})}
           {addedSiTags}

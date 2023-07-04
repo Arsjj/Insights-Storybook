@@ -1,10 +1,10 @@
 import { RightOutlined } from "@ant-design/icons";
 import type { MenuProps } from "antd";
-import { Dropdown } from "antd";
+import { Dropdown, Space } from "antd";
 import { SiDropdownProps } from "./index.d";
 import { css } from "@emotion/react";
 import { FC } from "react";
-import {overlayStyles} from "./styles"
+import { overlayStyles } from "./styles";
 
 const items: MenuProps["items"] = [
   {
@@ -31,11 +31,12 @@ const disabledstyles = css`
 const styles = css`
   color: #4a4a4e; //gray-8
   cursor: pointer;
+  /* width: fit-content; */
 
   &.ant-dropdown-open {
     .anticon {
       transform: rotate(90deg);
-      transition: 200ms;
+      transition: 250ms;
     }
   }
 
@@ -53,23 +54,29 @@ const styles = css`
   }
 `;
 
-const SiDropdown: FC<SiDropdownProps> = ({rotatingArrow, children, ...rest }) => {
+const SiDropdown: FC<SiDropdownProps> = ({
+  rotatingArrow,
+  children,
+  ...rest
+}) => {
   return (
+    <Space>
     <Dropdown
-      css={styles}
-      menu={{ items }}
-      trigger={["click"]}
-      overlayClassName={overlayStyles}
-      // placement="bottomRight"
-      {...rest}
-    >
-      <div>
-        Click me
-        <span className="extra">(sdfasdfasdfasd)</span>
-        {children}
-        {rotatingArrow && <RightOutlined />}
-      </div>
-    </Dropdown>
+    css={styles}
+        menu={{ items }}
+        trigger={["click"]}
+        overlayClassName={overlayStyles}
+        placement="bottomRight"
+        {...rest}
+        >
+        <div>
+          Click me dfasasdfsdaf
+          <span className="extra">(sdfasdfasdfasd)</span>
+          {children}
+          {rotatingArrow && <RightOutlined />}
+        </div>
+      </Dropdown>
+    </Space>
   );
 };
 

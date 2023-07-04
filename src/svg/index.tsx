@@ -11,6 +11,7 @@ import Logo from "./Sentium";
 import Empty from "./Empty";
 import SiBackground from "./Background";
 import Bing from "./NotificationBang";
+import LockCircle from "./LockCircle";
 // type RFC<P = {}> = FunctionComponent<PropsWithChildren<P>>;
 
 interface Props {
@@ -52,6 +53,7 @@ const icons = {
   Empty: () => <Empty/>,
   SiBackGround: () => <SiBackground />,
   Bing: (color: string, size: number) => <Bing color={color} size={size}/>,
+  LockCircle: (color: string, size: number) => <LockCircle color={color} size={size}/>,
 };
 
 const iconStyle = css`
