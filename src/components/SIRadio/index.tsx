@@ -9,9 +9,18 @@ function SIRadio({ children, ...rest }: RadioProps) {
   );
 }
 
+
 function Group({ children, ...rest }: RadioGroupProps) {
   return (
     <Radio.Group css={styles.group} {...rest}>
+      {children}
+    </Radio.Group>
+  );
+}
+
+function SwitcherGroup({ children, ...rest }: RadioGroupProps) {
+  return (
+    <Radio.Group css={styles.switcher} buttonStyle="solid" {...rest}>
       {children}
     </Radio.Group>
   );
@@ -22,5 +31,6 @@ function Button({ children, ...rest }: RadioProps) {
 }
 
 SIRadio.Group = Group;
+SIRadio.SwitcherGroup = SwitcherGroup;
 SIRadio.Button = Button;
 export default SIRadio;

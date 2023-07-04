@@ -62,7 +62,7 @@ export const addTag = css`
 export const addedTagsContainerStyles = css`
   display: flex;
   flex-wrap: wrap;
-  margin: 20px 0;
+  /* margin: 20px 0; */
   gap: 5px;
   row-gap: 5px;
 `;

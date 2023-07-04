@@ -20,7 +20,7 @@ import SiRate from "./components/Rate";
 import SiDatePicker from "./components/SiDatePicker";
 import Header from "./Website Components/Header";
 import SiSwitch from "./components/SiSwitch";
-import SiSwitcher from "./components/SiSwitcher";
+import SiDropdown from "./components/Dropdown";
 
 const items = [
   {
@@ -136,7 +136,6 @@ function App() {
         <SiSwitch  disabled defaultChecked/>
         <SiSwitch  loading defaultChecked/>
 
-        <SiSwitcher />
 
         
         {/* <SiStep
@@ -149,9 +148,10 @@ function App() {
           current={3}
           // status="error"
           /> */}
+           <SiDropdown rotatingArrow placement="bottomRight" />
+          {notificationContext}
           {addSiTag({tagProps: {children: "sdfsdf"}, inputProps:{}})}
           {addedSiTags}
-          {notificationContext}
           <Button size="large" style={{width: "200px"}} children="Click for notification" onClick={() => openNotification({message: "fdsgsdfgsdf", type:"success"})} /> 
       {/* <SiTag add checked>Add</SiTag>
       <SiTag >Add</SiTag>
