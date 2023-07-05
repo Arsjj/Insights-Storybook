@@ -51,6 +51,7 @@ const styles = css`
   .anticon {
     width: 14px;
     transition: 250ms;
+    margin: 0 4px;
   }
 `;
 
@@ -61,17 +62,8 @@ const SiDropdown: FC<SiDropdownProps> = ({
 }) => {
   return (
     <Space>
-    <Dropdown
-    css={styles}
-        menu={{ items }}
-        trigger={["click"]}
-        overlayClassName={overlayStyles}
-        placement="bottomRight"
-        {...rest}
-        >
+      <Dropdown css={styles} menu={{ items }} {...rest}>
         <div>
-          Click me dfasasdfsdaf
-          <span className="extra">(sdfasdfasdfasd)</span>
           {children}
           {rotatingArrow && <RightOutlined />}
         </div>

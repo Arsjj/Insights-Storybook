@@ -1,7 +1,7 @@
 import { useState } from "react";
 
 
-import {Button, ConfigProvider} from "antd";
+import {Button, ConfigProvider, Dropdown} from "antd";
 import {
   AppstoreOutlined,
   MailOutlined,
@@ -61,7 +61,6 @@ const items = [
     key: 'ap01p',
     icon: <AppstoreOutlined />,
     disabled: true,
-
   },
 ]
 
@@ -77,6 +76,25 @@ function App() {
     setSelected((selected) => !selected);
     console.log(selected);
   };
+
+
+  const items2 = [
+    {
+      label: <a href="https://www.antgroup.com">1st menu item</a>,
+      key: "0",
+    },
+    {
+      label: <a href="https://www.aliyun.com">2nd menu item </a>,
+      key: "1",
+    },
+    // {
+    //   type: 'divider',
+    // },
+    {
+      label: "3rd menu item",
+      key: "3",
+    },
+  ];
 
   return (
     <ConfigProvider
@@ -134,8 +152,6 @@ function App() {
         <SiSwitch  disabled/>
         <SiSwitch  disabled defaultChecked/>
         <SiSwitch  loading defaultChecked/>
-
-
         
         {/* <SiStep
           items={stepItems}
@@ -147,7 +163,7 @@ function App() {
           current={3}
           // status="error"
           /> */}
-           <SiDropdown rotatingArrow placement="bottomRight"  />
+           <SiDropdown rotatingArrow trigger={['click']}>Click Me</SiDropdown>
           {notificationContext}
           {addSiTag({tagProps: {children: "sdfsdf"}, inputProps:{}})}
           {addedSiTags}
